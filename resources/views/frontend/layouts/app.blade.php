@@ -29,6 +29,16 @@
       <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+      
+		<!--owl.carousel.css-->
+        <link rel="stylesheet" href="{{asset('assets/tournest/assets/css/owl.carousel.min.css')}}">
+		<link rel="stylesheet" href="{{asset('assets/tournest/assets/css/owl.theme.default.min.css')}}"/>
+		<!--style.css-->
+		<link rel="stylesheet" href="{{asset('assets/tournest/assets/css/style.css')}}" />
+      {{-- Custom CSS --}}
+      <link rel="stylesheet" href="{{asset('frontend/css/indry.css')}}">
+      <link rel="stylesheet" href="{{asset('frontend/css/ika.css')}}">
+
    </head>
    <!-- body -->
    <body class="main-layout">
@@ -47,9 +57,10 @@
                      <div class="col-md-12">
                         <div class="header_information">
                            <ul>
-                              <li><img src="{{asset('assets/eforlad/images/1.png')}}" alt="#"/> 145.street road new York</li>
                               <li><img src="{{asset('assets/eforlad/images/2.png')}}" alt="#"/> +71  5678954378</li>
-                              <li><img src="{{asset('assets/eforlad/images/3.png')}}" alt="#"/> Demo@hmail.com</li>
+                              <li><img src="{{asset('assets/eforlad/images/3.png')}}" alt="#"/> admin@travel-go.com</li>
+                              <li> <button><a href="#">Login</a></button> </li>
+                              <li> <button><a href="#">Register</a></button> </li>
                            </ul>
                         </div>
                      </div>
@@ -61,7 +72,7 @@
                   <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col logo_section">
                      <div class="full">
                         <div class="center-desk">
-                           <div class="logo"> <a href="index.html"><img src="{{asset('assets/eforlad/images/logo.png')}}" alt="#"></a> </div>
+                           <div class="logo"> <a href="{{route('home.index')}}"><img src="{{asset('assets/frontend/images/logo-bg.png')}}" alt="#"></a> </div>
                         </div>
                      </div>
                   </div>
@@ -70,9 +81,8 @@
                         <div class="limit-box">
                            <nav class="main-menu">
                               <ul class="menu-area-main">
-                                <li> <button><a href="#">Login</a></button> </li>
                                  <li class="active"> <a href="{{route('home.index')}}">Home</a> </li>
-                                 <li> <a href="#about">Sewa</a> </li>
+                                 <li> <a href="#sewa-search">Sewa</a> </li>
                                  <li><a href="#travel">Promotion</a></li>
                               </ul>
                            </nav>
@@ -85,265 +95,9 @@
          <!-- end header inner -->
       </header>
       <!-- end header -->
-      <section >
-         <div class="banner-main">
-            <img src="{{asset('assets/eforlad/images/banner.jpg')}}" alt="#"/>
-            <div class="container">
-               <div class="text-bg">
-                  <h1>America<br><strong class="white">Amazing Tour</strong></h1>
-                  <div class="button_section"> <a class="main_bt" href="#">Read More</a>  </div>
-                  <div class="container">
-                     <form class="main-form">
-                        <h3>Find Your Tour</h3>
-                        <div class="row">
-                           <div class="col-md-9">
-                              <div class="row">
-                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
-                                    <label >Keywords</label>
-                                    <input class="form-control" placeholder="" type="text" name="">
-                                 </div>
-                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
-                                    <label >Category</label>
-                                    <select class="form-control" name="Any">
-                                       <option>Any</option>
-                                       <option>Option 1</option>
-                                       <option>Option 2</option>
-                                       <option>Option 3</option>
-                                    </select>
-                                 </div>
-                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
-                                    <label >Min Price</label>
-                                    <input class="form-control" placeholder="00.0" type="text" name="00.0">
-                                 </div>
-                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
-                                    <label >Duration</label>
-                                    <input class="form-control" placeholder="Any" type="text" name="Any">
-                                 </div>
-                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
-                                    <label >Date</label>
-                                    <input class="form-control" placeholder="Any" type="date" name="Any">
-                                 </div>
-                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
-                                    <label >Max Price</label>
-                                    <input class="form-control" placeholder="00.0" type="text" name="00.0">
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12">
-                              <a href="#">search</a>
-                           </div>
-                        </div>
-                     </form>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </section>
-      <!-- about -->
-      <div id="about" class="about">
-         <div class="container">
-            <div class="row">
-               <div class="col-md-12 ">
-                  <div class="titlepage">
-                     <h2>About  our travel agency</h2>
-                     <span> fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,</span>
-                  </div>
-               </div>
-            </div>
-         </div>
-         <div class="bg">
-            <div class="container">
-               <div class="row">
-                  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-                     <div class="about-box">
-                        <p> <span>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure thereThere are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there</span></p>
-                        <div class="palne-img-area">
-                           <img src="{{asset('assets/eforlad/images/plane-img.png')}}" alt="images">
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <a href="#">Read More</a>
-         </div>
-      </div>
-      <!-- end about -->
-      <!-- traveling -->
-      <div id="travel" class="traveling">
-         <div class="container">
-            <div class="row">
-               <div class="col-md-12 ">
-                  <div class="titlepage">
-                     <h2>Select Offers For Traveling</h2>
-                     <span>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,</span> 
-                  </div>
-               </div>
-            </div>
-            <div class="row">
-               <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
-                  <div class="traveling-box">
-                     <i><img src="{{asset('assets/eforlad/icon/travel-icon.png')}}" alt="icon"/></i>
-                     <h3>Different Countrys</h3>
-                     <p> going to use a passage of Lorem Ipsum, you need to be </p>
-                     <div class="read-more">
-                        <a  href="#">Read More</a>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
-                  <div class="traveling-box">
-                     <i><img src="{{asset('assets/eforlad/icon/travel-icon2.png')}}" alt="icon"/></i>
-                     <h3>Mountains Tours</h3>
-                     <p> going to use a passage of Lorem Ipsum, you need to be </p>
-                     <div class="read-more">
-                        <a  href="#">Read More</a>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
-                  <div class="traveling-box">
-                     <i><img src="{{asset('assets/eforlad/icon/travel-icon3.png')}}" alt="icon"/></i>
-                     <h3>Bus Tours</h3>
-                     <p> going to use a passage of Lorem Ipsum, you need to be </p>
-                     <div class="read-more">
-                        <a  href="#">Read More</a>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
-                  <div class="traveling-box">
-                     <i><img src="{{asset('assets/eforlad/icon/travel-icon4.png')}}" alt="icon"/></i>
-                     <h3>Summer Rest</h3>
-                     <p> going to use a passage of Lorem Ipsum, you need to be </p>
-                     <div class="read-more">
-                        <a  href="#">Read More</a>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <!-- end traveling -->
-      <!--London -->
-      <div class="London">
-         <div class="container">
-            <div class="row">
-               <div class="col-md-12">
-                  <div class="titlepage">
-                     <h2>Weekend in New York, London</h2>
-                     <span>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,</span> 
-                  </div>
-               </div>
-            </div>
-         </div>
-         <div class="container-fluid">
-            <div class="London-img">
-               <figure><img src="{{asset('assets/eforlad/images/London.jpg')}}" alt="img"/></figure>
-            </div>
-         </div>
-      </div>
-      <!-- end London -->
-      <!--Tours -->
-      <div class="Tours">
-         <div class="container">
-            <div class="row">
-               <div class="col-md-12">
-                  <div class="titlepage">
-                     <h2>The Best Tours</h2>
-                     <span>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,</span> 
-                  </div>
-               </div>
-            </div>
-            <section id="demos">
-               <div class="row">
-                  <div class="col-md-12">
-                     <div class="owl-carousel owl-theme">
-                        <div class="item">
-                           <img class="img-responsive" src="{{asset('assets/eforlad/images/1.jpg')}}" alt="#" />
-                           <h3>Holiday Tour</h3>
-                           <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in soe suffk even slightly believable. If y be sure there</p>
-                        </div>
-                        <div class="item">
-                           <img class="img-responsive" src="{{asset('assets/eforlad/images/2.jpg')}}" alt="#" />
-                           <h3>New York</h3>
-                           <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in soe suffk even slightly believable. If y be sure there</p>
-                        </div>
-                        <div class="item">
-                           <img class="img-responsive" src="{{asset('assets/eforlad/images/3.jpg')}}" alt="#" />
-                           <h3>London</h3>
-                           <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in soe suffk even slightly believable. If y be sure there</p>
-                        </div>
-                        <div class="item">
-                           <img class="img-responsive" src="{{asset('assets/eforlad/images/2.jpg')}}" alt="#" />
-                           <h3>Holiday Tour</h3>
-                           <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in soe suffk even slightly believable. If y be sure there</p>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </section>
-         </div>
-      </div>
-      <!-- end Tours -->
-      <!-- Amazing -->
-      <div class="amazing">
-         <div class="container">
-            <div class="row">
-               <div class="col-md-12">
-                  <div class="amazing-box">
-                     <h2>Amazing London Tour</h2>
-                     <span>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there</span>
-                     <a href="#">Book Now</a><a href="#">Get More</a>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <!-- end Amazing -->
-      <!-- our blog -->
-      <div id="blog" class="blog">
-         <div class="container">
-            <div class="row">
-               <div class="col-md-12">
-                  <div class="titlepage">
-                     <h2>Our Blog</h2>
-                     <span>Lorem Ipsum is that it has a more-or-less normal distribution of letters,</span> 
-                  </div>
-               </div>
-            </div>
-            <div class="row">
-               <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                  <div class="blog-box">
-                     <figure><img src="{{asset('assets/eforlad/images/blog-image0.jpg')}}" alt="#"/>
-                        <span>4 Feb 2019</span>
-                     </figure>
-                     <div class="travel">
-                        <span>Post  By :  Travel  Agency</span> 
-                        <p><strong class="Comment"> 06 </strong>  Comment</p>
-                        <p><strong class="like">05 </strong>Like</p>
-                     </div>
-                     <h3>London Amazing Tour</h3>
-                     <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web</p>
-                  </div>
-               </div>
-               <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                  <div class="blog-box">
-                     <figure><img src="{{asset('assets/eforlad/images/blog-image.jpg')}}" alt="#"/>
-                        <span>10 Feb 2019</span>
-                     </figure>
-                     <div class="travel">
-                        <span>Post  By :  Travel  Agency</span> 
-                        <p><strong class="Comment"> 06 </strong>  Comment</p>
-                        <p><strong class="like">05 </strong>Like</p>
-                     </div>
-                     <h3>London Amazing Tour</h3>
-                     <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web</p>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <!-- end our blog -->
+      
+      @yield('content')
+      
       <!-- footer -->
       <footer>
          <div id="contact" class="footer">
@@ -351,17 +105,17 @@
                <div class="row pdn-top-30">
                   <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
                      <ul class="location_icon">
-                        <li> <a href="#"><img src="icon/facebook.png"></a></li>
-                        <li> <a href="#"><img src="icon/Twitter.png"></a></li>
-                        <li> <a href="#"><img src="icon/linkedin.png"></a></li>
-                        <li> <a href="#"><img src="icon/instagram.png"></a></li>
+                        <li> <a href="#"><img src="{{asset('assets/eforlad/icon/facebook.png')}}"></a></li>
+                        <li> <a href="#"><img src="{{asset('assets/eforlad/icon/Twitter.png')}}"></a></li>
+                        <li> <a href="#"><img src="{{asset('assets/eforlad/icon/linkedin.png')}}"></a></li>
+                        <li> <a href="#"><img src="{{asset('assets/eforlad/icon/instagram.png')}}"></a></li>
                      </ul>
                   </div>
                   <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
                      <div class="Follow">
                         <h3>CONTACT US</h3>
-                        <span>123 Second Street Fifth <br>Avenue,<br>
-                        Manhattan, New York<br>
+                        <span>AXA Tower <br>Kuningan,<br>
+                        Jakarta, Indonesia<br>
                         +987 654 3210</span>
                      </div>
                   </div>
@@ -397,7 +151,7 @@
                </div>
                <div class="copyright">
                   <div class="container">
-                     <p>Copyright 2019 All Right Reserved By <a href="https://html.design/">Free html Templates</a></p>
+                     <p>Copyright 2021 All Right<a href="http://indrysfa.com/"></a></p>
                   </div>
                </div>
             </div>
@@ -415,6 +169,10 @@
       <script src="{{asset('assets/eforlad/js/custom.js')}}"></script>
       <!-- javascript --> 
       <script src="{{asset('assets/eforlad/js/owl.carousel.js')}}"></script>
+      {{-- Custom JS --}}
+      <script src="{{asset('assets/frontend/js/indry.js')}}"></script>
+      <script src="{{asset('assets/frontend/js/ika.js')}}"></script>
+
       <script>
          $(document).ready(function() {
            var owl = $('.owl-carousel');
