@@ -13,6 +13,31 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+// ika
+// page promotion
+// detail promotion
+
+// indry
+// edit home
+// sewa
+
+
+Route::prefix('/')->group(function () {
+    // Indry
+    Route::get('/', 'HomeController@index')->name('home.index');
+
+    // Ika
+    // Route::get('/promotion', 'SewaController@index');
+});
+
+Route::prefix('/admin')->group(function () {
+    // Indry
+    // Route::get('/', 'HomeController@index')->name('home.index');
+
+    // Ika
+    // Route::get('/sewa', 'SewaController@index');
 });
