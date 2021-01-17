@@ -32,9 +32,10 @@ class HomeController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    // public function store(Request $request)
+    public function store()
     {
-        //
+        return view('frontend.home.detailsewa');
     }
 
     /**
@@ -43,9 +44,9 @@ class HomeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        return view('frontend.home.showsewa');
     }
 
     /**

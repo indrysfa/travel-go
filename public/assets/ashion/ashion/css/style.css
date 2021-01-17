@@ -31,14 +31,14 @@
 /* Template default CSS
 /*----------------------------------------*/
 
-html,
+/* html,
 body {
 	height: 100%;
 	font-family: "Montserrat", sans-serif;
 	-webkit-font-smoothing: antialiased;
-}
+} */
 
-h1,
+/* h1,
 h2,
 h3,
 h4,
@@ -48,9 +48,9 @@ h6 {
 	color: #111111;
 	font-weight: 400;
 	font-family: "Montserrat", sans-serif;
-}
+} */
 
-h1 {
+/* h1 {
 	font-size: 70px;
 }
 
@@ -72,7 +72,7 @@ h5 {
 
 h6 {
 	font-size: 16px;
-}
+} */
 
 p {
 	font-size: 14px;
@@ -139,11 +139,11 @@ ol {
 }
 
 .spad {
-	padding-top: 100px;
-	padding-bottom: 100px;
+	padding-top: 40px;
+	/* padding-bottom: 100px; */
 }
 
-.text-white h1,
+/* .text-white h1,
 .text-white h2,
 .text-white h3,
 .text-white h4,
@@ -154,11 +154,11 @@ ol {
 .text-white li,
 .text-white a {
 	color: #fff;
-}
+} */
 
-/* buttons */
+/*buttons */
 
-.primary-btn {
+/* .primary-btn {
 	display: inline-block;
 	font-size: 14px;
 	text-transform: uppercase;
@@ -168,7 +168,7 @@ ol {
 	background: #ca1515;
 }
 
-.site-btn {
+/* .site-btn {
 	font-size: 14px;
 	color: #ffffff;
 	background: #ca1515;
@@ -178,7 +178,7 @@ ol {
 	display: inline-block;
 	padding: 12px 30px;
 	border-radius: 50px;
-}
+} */
 
 /* Preloder */
 
@@ -316,7 +316,7 @@ ol {
   Header
 -----------------------*/
 
-.header {
+/* .header {
 	background: #ffffff;
 	-webkit-box-shadow: 0px 5px 10px rgba(91, 91, 91, 0.1);
 	box-shadow: 0px 5px 10px rgba(91, 91, 91, 0.1);
@@ -499,13 +499,13 @@ ol {
 
 .canvas__open {
 	display: none;
-}
+} */
 
 /*---------------------
   Banner
 -----------------------*/
 
-.banner {
+/* .banner {
 	height: 500px;
 }
 
@@ -540,9 +540,9 @@ ol {
 	width: 100%;
 	background: #ca1515;
 	content: "";
-}
+} */
 
-.banner__slider {
+/* .banner__slider {
 	text-align: center;
 	padding: 150px 0 0;
 }
@@ -553,23 +553,23 @@ ol {
 	top: 430px;
 	width: 100%;
 	text-align: center;
-}
+} */
 
-.banner__slider.owl-carousel .owl-dots button {
+/* .banner__slider.owl-carousel .owl-dots button {
 	height: 12px;
 	width: 12px;
 	background: #a1a1a1;
 	border-radius: 50%;
 	margin-right: 10px;
-}
+} */
 
-.banner__slider.owl-carousel .owl-dots button.active {
+/* .banner__slider.owl-carousel .owl-dots button.active {
 	background: #ca1515;
-}
+} */
 
-.banner__slider.owl-carousel .owl-dots button:last-child {
+/* .banner__slider.owl-carousel .owl-dots button:last-child {
 	margin-right: 0;
-}
+} */
 
 /*---------------------
   Trend
@@ -783,7 +783,7 @@ ol {
   Instagram
 -----------------------*/
 
-.instagram__item {
+/* .instagram__item {
 	height: 320px;
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -842,13 +842,13 @@ ol {
 	font-weight: 500;
 	display: block;
 	margin-top: 10px;
-}
+} */
 
 /*---------------------
   Footer
 -----------------------*/
 
-.footer {
+/* .footer {
 	padding-top: 55px;
 }
 
@@ -986,7 +986,7 @@ ol {
 
 .footer__copyright__text a:hover {
 	color: #ca1515;
-}
+} */
 
 /*---------------------
   Breadcrumb
@@ -1309,10 +1309,10 @@ ol {
   Shop
 -----------------------*/
 
-.shop {
+/* .shop {
 	padding-top: 70px;
 	padding-bottom: 80px;
-}
+} */
 
 .sidebar__categories {
 	margin-bottom: 50px;
@@ -1609,7 +1609,7 @@ ol {
 
 .product-details {
 	padding-top: 70px;
-	padding-bottom: 50px;
+	padding-bottom: 20px;
 }
 
 .product__details__pic {
@@ -1992,7 +1992,7 @@ ol {
 }
 
 .product__details__tab {
-	padding-top: 80px;
+	/* padding-top: 80px; */
 	margin-bottom: 65px;
 }
 
@@ -3152,14 +3152,14 @@ ol {
 	}
 }
 
-@media only screen and (min-width: 1200px) and (max-width: 1599px) {
+/* @media only screen and (min-width: 1200px) and (max-width: 1599px) {
 	.header__menu ul li {
 		margin-right: 20px;
 	}
 	.header {
 		padding: 0 30px;
 	}
-}
+} */
 
 @media only screen and (min-width: 1200px) {
 	.container {

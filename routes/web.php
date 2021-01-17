@@ -29,6 +29,8 @@ use Illuminate\Support\Facades\Route;
 Route::prefix('/')->group(function () {
     // Indry
     Route::get('/', 'HomeController@index')->name('home.index');
+    Route::get('/sewa', 'HomeController@show')->name('sewa.show');
+    Route::get('/sewa-detail', 'HomeController@store')->name('sewa.detail');
 
     // Ika
     // Route::get('/promotion', 'SewaController@index');
