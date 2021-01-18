@@ -25,7 +25,7 @@ use Illuminate\Support\Facades\Route;
 // edit home
 // sewa
 
-
+// Route Frontend
 Route::prefix('/')->group(function () {
     // Indry
     Route::get('/', 'HomeController@index')->name('home.index');
@@ -34,6 +34,7 @@ Route::prefix('/')->group(function () {
     // Route::get('/promotion', 'SewaController@index');
 });
 
+// Route Backend
 Route::prefix('/admin')->group(function () {
     // Indry
     // Route::get('/', 'HomeController@index')->name('home.index');

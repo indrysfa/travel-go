@@ -17,12 +17,9 @@ PAGE ::
 - Promotions : IKA
 - SEWA : INDRY
 
-## License
+# travel-go
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-# travelika
-
-https://github.com/Mahananiika
-https://github.com/indrysfa
+- [INDRY](https://github.com/indrysfa)
+- [IKA](https://github.com/Mahananiika)
 
 Support author https://saweria.co/donate/sailingxlt

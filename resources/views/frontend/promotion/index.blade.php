@@ -1,5 +1,5 @@
 @extends('frontend.layouts.app')
-@section('title', 'Halaman Home')
+@section('title', 'Promotion')
 @section('content')
 
 <div class="container">
