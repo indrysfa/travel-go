@@ -57,7 +57,7 @@
 <body class="main-layout">
     <!-- loader  -->
     <div class="loader_bg">
-        <div class="loader"><img src="{{ asset('assets/eforlad/images/loading.gif') }}" alt="#" /></div>
+        <div class="loader"><img src="{{ asset('assets/eforlad/images/loading.gif') }}" alt="loading" /></div>
     </div>
     <!-- end loader -->
     <!-- header -->
@@ -70,9 +70,9 @@
                         <div class="col-md-12">
                             <div class="header_information">
                                 <ul>
-                                    <li><img src="{{ asset('assets/eforlad/images/2.png') }}" alt="#" /> +71 5678954378
+                                    <li><img src="{{ asset('assets/eforlad/images/2.png') }}" alt="header-contact" /> +71 5678954378
                                     </li>
-                                    <li><img src="{{ asset('assets/eforlad/images/3.png') }}" alt="#" />
+                                    <li><img src="{{ asset('assets/eforlad/images/3.png') }}" alt="header-contact" />
                                         admin@travel-go.com</li>
                                     <li> <button><a href="#">Login</a></button> </li>
                                     <li> <button><a href="#">Register</a></button> </li>
@@ -98,7 +98,7 @@
                                 <nav class="main-menu">
                                     <ul class="menu-area-main">
                                         <li class="active"> <a href="{{ route('home.index') }}">Home</a> </li>
-                                        <li> <a href="#sewa-search">Sewa</a> </li>
+                                        <li> <a href="{{ route('home.index') }}#sewa-search">Sewa</a> </li>
                                         <li><a href="#travel">Promotion</a></li>
                                     </ul>
                                 </nav>
