@@ -333,7 +333,7 @@ html,body{
 	margin-top: -11px;
 }
 .about-btn {
-    margin-top: 39px;
+    /* margin-top: 39px; */
     letter-spacing: 1.2px;
      -webkit-transition: 0.5s ease-in-out;
     -moz-transition: 0.5s ease-in-out;
@@ -865,9 +865,9 @@ html,body{
 /*-------------------------------------
         8. Packages 
 --------------------------------------*/
-.packages{
+/* .packages{
     padding:120px 0 90px;
-}
+} */
 .packages-content{
     margin-top:65px;
 }
