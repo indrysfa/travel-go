@@ -31,7 +31,7 @@ Route::prefix('/')->group(function () {
     Route::get('/', 'HomeController@index')->name('home.index');
 
     // Ika
-    // Route::get('/promotion', 'SewaController@index');
+    Route::get('/promotion', 'promotionController@promotion')->name('promotion');
 });
 
 // Route Backend
