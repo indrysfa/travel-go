@@ -26,7 +26,7 @@ use Illuminate\Support\Facades\Route;
 // sewa
 
 // Route Frontend
-Route::prefix('/')->group(function () {
+Route::group(['prefix' => '/', 'namespace' => 'Frontend'], function () {
     // Indry
     Route::get('/', 'HomeController@index')->name('home.index');
     Route::get('/sewa', 'HomeController@show')->name('sewa.show');
@@ -37,10 +37,10 @@ Route::prefix('/')->group(function () {
 });
 
 // Route Backend
-Route::prefix('/admin')->group(function () {
+Route::group(['prefix' => '/admin', 'namespace' => 'Frontend'], function () {
     // Indry
-    // Route::get('/', 'HomeController@index')->name('home.index');
+    Route::get('/', 'HomeController@index')->name('home.index');
 
     // Ika
-    // Route::get('/sewa', 'SewaController@index');
+    // Route::get('/promotion', 'SewaController@index');
 });
