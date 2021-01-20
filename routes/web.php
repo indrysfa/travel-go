@@ -29,18 +29,24 @@ use Illuminate\Support\Facades\Route;
 Route::group(['prefix' => '/', 'namespace' => 'Frontend'], function () {
     // Indry
     Route::get('/', 'HomeController@index')->name('home.index');
-    Route::get('/sewa', 'HomeController@show')->name('sewa.show');
     Route::get('/sewa-detail', 'HomeController@store')->name('sewa.detail');
 
+    //Hendy
+    Route::get('/sewa', 'SewaController@index')->name('sewa.index');
+    
     // Ika
     // Route::get('/promotion', 'SewaController@index');
 });
 
 // Route Backend
-Route::group(['prefix' => '/admin', 'namespace' => 'Frontend'], function () {
+Route::group(['prefix' => '/admin', 'namespace' => 'Backend'], function () {
     // Indry
-    Route::get('/', 'HomeController@index')->name('home.index');
+    Route::get('/', 'HomeController@index')->name('bhome.index');
+    Route::get('/home', 'HomeController@show')->name('bhome.show');
+
+    // Hendy
+    // Route::get('/sewa', 'SewaController@show');
 
     // Ika
-    // Route::get('/promotion', 'SewaController@index');
+    // Route::get('/promotion', 'PromotionController@index');
 });

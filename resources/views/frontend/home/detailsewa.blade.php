@@ -9,7 +9,7 @@
                 <div class="col-lg-12">
                     <div class="breadcrumb__links">
                         <a href="{{ route('home.index') }}"><i class="fa fa-home"></i> Home</a>
-                        <a href="{{ route('sewa.show') }}">Property Sewa </a>
+                        <a href="{{ route('sewa.index') }}">Property Sewa </a>
                         <span>@yield('subtitle')</span>
                     </div>
                 </div>
