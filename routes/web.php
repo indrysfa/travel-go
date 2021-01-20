@@ -50,3 +50,7 @@ Route::group(['prefix' => '/admin', 'namespace' => 'Backend'], function () {
     // Ika
     // Route::get('/promotion', 'PromotionController@index');
 });
+
+// namespace App\Http\Controllers\Frontend;
+
+// namespace App\Http\Controllers\Backend;
