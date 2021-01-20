@@ -42,6 +42,7 @@
     {{-- Custom CSS --}}
     <link rel="stylesheet" href="{{ asset('frontend/css/indry.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/css/ika.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/css/hendy.css') }}">
 
     <!-- Ashion Css Styles -->
     <link rel="stylesheet" href="{{ asset('assets/ashion/ashion/css/font-awesome.min.css') }}" type="text/css">
