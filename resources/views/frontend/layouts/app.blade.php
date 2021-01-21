@@ -98,11 +98,12 @@
                             <div class="limit-box">
                                 <nav class="main-menu">
                                     <ul class="menu-area-main">
-                                        <li class="active"> <a href="{{ route('home.index') }}">Home</a> </li>
-                                        <li> <a href="{{ route('home.index') }}#sewa-search">Sewa</a> </li>
+                                        <li class=""> <a href="{{ route('home.index') }}">Home</a> </li>
+                                        <li class=""> <a href="{{ route('frontend.sewa.index') }}#sewa-search">Sewa</a> </li>
                                         <li><a href="#travel">Promotion</a></li>
                                     </ul>
                                 </nav>
+                                <span class="target"></span>
                             </div>
                         </div>
                     </div>
@@ -203,6 +204,7 @@
     {{-- Custom JS --}}
     <script src="{{ asset('assets/frontend/js/indry.js') }}"></script>
     <script src="{{ asset('assets/frontend/js/ika.js') }}"></script>
+    <script src="{{ asset('assets/frontend/js/hendy.js') }}"></script>
 
     <script>
         $(document).ready(function() {

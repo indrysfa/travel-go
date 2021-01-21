@@ -32,7 +32,7 @@ Route::group(['prefix' => '/', 'namespace' => 'Frontend'], function () {
     Route::get('/sewa-detail', 'HomeController@store')->name('sewa.detail');
 
     //Hendy
-    Route::get('/sewa', 'SewaController@index')->name('sewa.index');
+    Route::get('/sewa', 'SewaController@index')->name('frontend.sewa.index');
     
     // Ika
     // Route::get('/promotion', 'SewaController@index');
@@ -45,7 +45,7 @@ Route::group(['prefix' => '/admin', 'namespace' => 'Backend'], function () {
     Route::get('/home', 'HomeController@show')->name('bhome.show');
 
     // Hendy
-    // Route::get('/sewa', 'SewaController@show');
+    Route::get('/sewa', 'SewaController@show')->name('backend.sewa.index');
 
     // Ika
     // Route::get('/promotion', 'PromotionController@index');

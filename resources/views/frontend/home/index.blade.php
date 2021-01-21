@@ -53,7 +53,7 @@
                                     </div>
                                 </div>
                                 <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12">
-                                    <a href="{{ route('sewa.index') }}">Search</a>
+                                    <a href="{{ route('frontend.sewa.index') }}">Search</a>
                                 </div>
                             </div>
                         </form>
