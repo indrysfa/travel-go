@@ -14,7 +14,7 @@ class SewaController extends Controller
      */
     public function index()
     {
-        //
+        return view('backend.sewa.index');
     }
 
     /**
