@@ -33,7 +33,7 @@ Route::group(['prefix' => '/', 'namespace' => 'Frontend'], function () {
 
     //Hendy
     Route::get('/sewa', 'SewaController@index')->name('frontend.sewa.index');
-    
+
     // Ika
     // Route::get('/promotion', 'SewaController@index');
 });
@@ -46,6 +46,13 @@ Route::group(['prefix' => '/admin', 'namespace' => 'Backend'], function () {
 
     // Hendy
     Route::get('/sewa', 'SewaController@show')->name('backend.sewa.index');
+    Route::get('/sewa-data-property', 'SewaController@index')->name('backend.sewa-data-property.index');
+    Route::get('/sewa-data-property/create', 'SewaController@create')->name('backend.sewa-data-property.create');
+    Route::post('/sewa-data-property', 'SewaController@store')->name('backend.sewa-data-property.store');
+    Route::get('/sewa-data-property/{sewa-data-property}', 'SewaController@show')->name('backend.sewa-data-property.show');
+    Route::get('/sewa-data-property/{sewa-data-property}/edit', 'SewaController@edit')->name('backend.sewa-data-property.edit');
+    Route::put('/sewa-data-property/{sewa-data-property}', 'SewaController@update')->name('backend.sewa-data-property.update');
+    Route::delete('/sewa-data-property/{sewa-data-property}', 'SewaController@destroy')->name('backend.sewa-data-property.destroy');
 
     // Ika
     // Route::get('/promotion', 'PromotionController@index');
