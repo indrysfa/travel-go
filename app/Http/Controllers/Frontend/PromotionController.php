@@ -7,5 +7,8 @@ use Illuminate\Http\Request;
 
 class PromotionController extends Controller
 {
-    //
+    public function promotion()
+    {
+        return view('frontend.promotion.index');
+    }
 }

@@ -35,8 +35,9 @@ Route::group(['prefix' => '/', 'namespace' => 'Frontend'], function () {
     Route::get('/sewa', 'SewaController@index')->name('sewa.index');
     
     // Ika
-    // Route::get('/promotion', 'SewaController@index');
+    Route::get('/promotion', 'PromotionController@promotion')->name('frontend.promotion.index');
 });
+
 
 // Route Backend
 Route::group(['prefix' => '/admin', 'namespace' => 'Backend'], function () {
@@ -48,5 +49,5 @@ Route::group(['prefix' => '/admin', 'namespace' => 'Backend'], function () {
     // Route::get('/sewa', 'SewaController@show');
 
     // Ika
-    // Route::get('/promotion', 'PromotionController@index');
+//     Route::get('/promotion', 'PromotionController@index')->name('backend.promotion.index');
 });
