@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Backend;
 
+use App\Property;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,10 @@ class SewaController extends Controller
      */
     public function index()
     {
-        return view('backend.sewa.index');
+        $backendSewaDataProperty = Property::all();
+        $backendKategoriFasilitas = Property::all();
+        $backendKategoriBuilding = Property::all();
+        return view('backend.sewa.index', compact('backendSewaDataProperty', 'backendKategoriFasilitas', 'backendKategoriBuilding'));
     }
 
     /**
@@ -22,7 +26,17 @@ class SewaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function createSewaDataProperty()
+    {
+        //
+    }
+
+    public function createKategoriFasilitas()
+    {
+        //
+    }
+
+    public function createKategoriBuilding()
     {
         //
     }
@@ -33,7 +47,17 @@ class SewaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function storeSewaDataProperty(Request $request)
+    {
+        //
+    }
+
+    public function storeKategoriFasilitas(Request $request)
+    {
+        //
+    }
+
+    public function storeKategoriBuilding(Request $request)
     {
         //
     }
@@ -44,7 +68,17 @@ class SewaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function showSewaDataProperty($id)
+    {
+        //
+    }
+
+    public function showKategoriFasilitas($id)
+    {
+        //
+    }
+
+    public function showKategoriBuilding($id)
     {
         //
     }
@@ -55,7 +89,17 @@ class SewaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function editSewaDataProperty($id)
+    {
+        //
+    }
+
+    public function editKategoriFasilitas($id)
+    {
+        //
+    }
+
+    public function editKategoriBuilding($id)
     {
         //
     }
@@ -67,10 +111,21 @@ class SewaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function updateSewaDataProperty(Request $request, $id)
     {
         //
     }
+
+    public function updateKategoriFasilitas(Request $request, $id)
+    {
+        //
+    }
+
+    public function updateKategoriBuilding(Request $request, $id)
+    {
+        //
+    }
+
 
     /**
      * Remove the specified resource from storage.
@@ -78,8 +133,19 @@ class SewaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroySewaDataProperty($id)
     {
         //
     }
+
+    public function destroyKategoriFasilitas($id)
+    {
+        //
+    }
+
+    public function destroyKategoriBuilding($id)
+    {
+        //
+    }
+
 }
