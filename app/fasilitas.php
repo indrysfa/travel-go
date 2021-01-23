@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Sewa extends Model
+class fasilitas extends Model
 {
-    // protected $guarded=[''];
+    protected $guarded = [];
 }
