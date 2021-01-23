@@ -15,8 +15,7 @@ class CreateTipePropertiesTable extends Migration
     {
         Schema::create('tipe_properties', function (Blueprint $table) {
             $table->id();
-            $table->string('nama');
-            $table->char('keterangan');
+            $table->string('tipe_property');
             $table->timestamps();
         });
     }

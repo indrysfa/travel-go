@@ -29,12 +29,15 @@ class CreatePropertiesTable extends Migration
             $table->string('tower');
             $table->integer('lantai');
             $table->integer('biaya_kebersihan');
+            $table->integer('jml_unit');
             $table->integer('tambah_orang');
 
             $table->string('nama_building');
-            $table->string('tipe_properti');
+            $table->bigInteger('tipe_property_id')->unsigned();
             $table->string('fasilitas');
             $table->timestamps();
+
+            $table->foreign('tipe_property_id')->references('id')->on('tipe_properties')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 
