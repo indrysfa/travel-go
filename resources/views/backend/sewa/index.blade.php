@@ -23,9 +23,9 @@
                         <th scope="col">#</th>
                         <th scope="col">Nama Property</th>
                         <th scope="col">Tipe Property</th>
-                        <th scope="col">Kamar Tidur</Th>
+                        <th scope="col">Kasur</Th>
                         <th scope="col">Kamar Mandi</th>
-                        <th scope="col">Alamat</th>
+                        <th scope="col">Kota</th>
                         <th scope="col">Total Unit</th>
                         <th scope="col"><span>IDR</span> Harga</th>
                         <th scope="col">Action</th>
