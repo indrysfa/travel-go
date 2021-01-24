@@ -38,7 +38,7 @@
     <link rel="stylesheet" href="{{ asset('assets/tournest/assets/css/owl.carousel.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/tournest/assets/css/owl.theme.default.min.css') }}" />
     <!--style.css-->
-    <link rel="stylesheet" href="{{ asset('assets/tournest/assets/css/style.css') }}" />
+    {{-- <link rel="stylesheet" href="{{ asset('assets/tournest/assets/css/style.css') }}" /> --}}
     {{-- Custom CSS --}}
     <link rel="stylesheet" href="{{ asset('frontend/css/indry.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/css/ika.css') }}">
