@@ -32,7 +32,7 @@
                         {{-- BY PRICE --}}
                         <div class="sidebar__filter">
                             <div class="section-title">
-                                <h4>by price</h4>
+                                <h4 >by price</h4>
                             </div>
                             <div class="filter-range-wrap">
                                 <div class="price-range ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content"
