@@ -45,12 +45,24 @@ class HomeController extends Controller
 
     public function addProperty(Request $request)
     {
-        // $this->validate($request, [
-        //     'image' => 'required|image|mimes:png,jpg,jpeg',
-        // ]);
+        $this->validate($request, [
+            'gambar1' => 'required|image|mimes:png,jpg,jpeg',
+            'gambar2' => 'required|image|mimes:png,jpg,jpeg',
+            'gambar3' => 'required|image|mimes:png,jpg,jpeg',
+            'gambar4' => 'required|image|mimes:png,jpg,jpeg',
+            'gambar5' => 'required|image|mimes:png,jpg,jpeg',
+            'gambar6' => 'required|image|mimes:png,jpg,jpeg',
+            'gambar7' => 'required|image|mimes:png,jpg,jpeg',
+        ]);
 
-        // $image = $request->file('image');
-        // $image->storeAs('public/image', $image->hashName());
+        $image1 = $request->file('gambar1');
+        $image2 = $request->file('gambar2');
+        $image3 = $request->file('gambar3');
+        $image4 = $request->file('gambar4');
+        $image5 = $request->file('gambar5');
+        $image6 = $request->file('gambar6');
+        $image7 = $request->file('gambar7');
+        $image->storeAs('public/image', $image1->hashName());
 
         $data = Property::create([
             'tgl_join' => $request->tgl_join,
@@ -73,8 +85,13 @@ class HomeController extends Controller
             'tipe_property_id' => $request->tipe_property_id,
             // 'nm_building_id' => $request->nm_building_id,
             // 'nm_fasilitas_id' => $request->nm_fasilitas_id,
-            // 'image' => $image->hashName()
-        ]);
+            'gambar1' => $image->hashName(),
+            'gambar2' => $image->hashName(),
+            'gambar3' => $image->hashName(),
+            'gambar4' => $image->hashName(),
+            'gambar5' => $image->hashName(),
+            'gambar6' => $image->hashName(),
+            'gambar7' => $image->hashName(),
 
         if ($data) {
             return redirect()->route('bhome.show');
