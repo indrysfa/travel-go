@@ -15,6 +15,7 @@ class CreateFasilitasesTable extends Migration
     {
         Schema::create('fasilitases', function (Blueprint $table) {
             $table->id();
+            $table->string('nm_fasilitas');
             $table->timestamps();
         });
     }

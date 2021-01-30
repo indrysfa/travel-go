@@ -32,12 +32,14 @@ class CreatePropertiesTable extends Migration
             $table->integer('jml_unit');
             $table->integer('tambah_orang');
 
-            $table->string('nama_building');
+            $table->bigInteger('nm_building_id')->unsigned();
             $table->bigInteger('tipe_property_id')->unsigned();
-            $table->string('fasilitas');
+            $table->bigInteger('nm_fasilitas_id')->unsigned();
             $table->timestamps();
 
+            $table->foreign('nm_building_id')->references('id')->on('buildings')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('tipe_property_id')->references('id')->on('tipe_properties')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('nm_fasilitas_id')->references('id')->on('fasilitases')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

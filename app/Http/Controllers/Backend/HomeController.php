@@ -54,7 +54,7 @@ class HomeController extends Controller
 
         $data = Property::create([
             'tgl_join' => $request->tgl_join,
-            'nm_property_id' => $request->nm_property_id,
+            'nama' => $request->nama,
             'alamat' => $request->alamat,
             'kota' => $request->kota,
             'harga' => $request->harga,
@@ -67,9 +67,12 @@ class HomeController extends Controller
             'tower' => $request->tower,
             'lantai' => $request->lantai,
             'biaya_kebersihan' => $request->biaya_kebersihan,
+            'jml_unit' => $request->jml_unit,
             'tambah_orang' => $request->tambah_orang,
             
             'tipe_property_id' => $request->tipe_property_id,
+            // 'nm_building_id' => $request->nm_building_id,
+            // 'nm_fasilitas_id' => $request->nm_fasilitas_id,
             // 'image' => $image->hashName()
         ]);
 
