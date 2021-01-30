@@ -8,8 +8,8 @@ class fasilitas extends Model
 {
     protected $guarded = [];
 
-    public function m_fasilitas()
+    public function m_property()
     {
-        return $this->hasMany(fasilitas::class, 'nm_fasilitas_id', 'id');
+        return $this->hasMany(Property::class, 'nm_fasilitas_id', 'id');
     }
 }

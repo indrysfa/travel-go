@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Property extends Model
 {
-    protected $fillable = ['nm_building_id', 'nm_fasilitas_id'];
+    protected $guarded = [];
 
     public function m_property()
     {

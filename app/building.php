@@ -8,8 +8,8 @@ class building extends Model
 {
     protected $guarded = [];
 
-    public function m_building()
+    public function m_property()
     {
-        return $this->hasMany(building::class, 'nm_building_id', 'id');
+        return $this->hasMany(Property::class, 'nm_building_id', 'id');
     }
 }
