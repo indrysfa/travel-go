@@ -38,7 +38,7 @@
                         </tr>
                         <th>{{ $loop->iteration }}</th>
                         {{-- Method 1 (works!!!) --}}
-                        <td><a href="{{ route('backend.sewa-data-property.show', ['backendSewaDataProperty' => $bsdp->id]) }}"> {{ $bsdp->nama_building }} </a>
+                        <td><a href="{{ route('backend.sewa-data-property.show', ['backendSewaDataProperty' => $bsdp->id]) }}"> {{ $bsdp->nm_building_id }} </a>
                         </td>
 
 
@@ -96,7 +96,7 @@
                         </tr>
                         <th>{{ $loop->iteration }}</th>
                         {{-- Method 1 (works!!!) --}}
-                        <td><a href="{{ route('backend.kategori-fasilitas.show', ['backendSewaDataProperty' => $bkf->id]) }}"> {{ $bkf->nama_building }} </a>
+                        <td><a href="{{ route('backend.kategori-fasilitas.show', ['backendSewaDataProperty' => $bkf->id]) }}"> {{ $bkf->nm_building_id }} </a>
                         </td>
 
 
@@ -154,7 +154,7 @@
                         </tr>
                         <th>{{ $loop->iteration }}</th>
                         {{-- Method 1 (works!!!) --}}
-                        <td><a href="{{ route('backend.kategori-building.show', ['backendSewaDataProperty' => $bkb->id]) }}"> {{ $bkb->nama_building }} </a>
+                        <td><a href="{{ route('backend.kategori-building.show', ['backendSewaDataProperty' => $bkb->id]) }}"> {{ $bkb->nm_building_id }} </a>
                         </td>
 
 

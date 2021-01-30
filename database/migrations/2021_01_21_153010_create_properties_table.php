@@ -31,6 +31,13 @@ class CreatePropertiesTable extends Migration
             $table->integer('biaya_kebersihan');
             $table->integer('jml_unit');
             $table->integer('tambah_orang');
+            $table->text('gambar1');
+            $table->text('gambar2')->nullable();
+            $table->text('gambar3')->nullable();
+            $table->text('gambar4')->nullable();
+            $table->text('gambar5')->nullable();
+            $table->text('gambar6')->nullable();
+            $table->text('gambar7')->nullable();
 
             $table->bigInteger('nm_building_id')->unsigned();
             $table->bigInteger('tipe_property_id')->unsigned();
