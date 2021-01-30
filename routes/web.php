@@ -44,6 +44,8 @@ Route::group(['prefix' => '/admin', 'namespace' => 'Backend'], function () {
     // Indry
     Route::get('/', 'HomeController@index')->name('bhome.index');
     Route::get('/home', 'HomeController@show')->name('bhome.show');
+    Route::get('/form-property', 'HomeController@showForm')->name('bform.show');
+    Route::get('/tipe-property', 'HomeController@showTipe')->name('bform.tipe');
 
     // Hendy
     // Route::get('/sewa', 'SewaController@show');
