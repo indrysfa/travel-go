@@ -11,4 +11,9 @@ class PromotionController extends Controller
     {
         return view('frontend.promotion.index');
     }
+
+    public function booking()
+    {
+        return view('frontend.promotion.detail');
+    }
 }

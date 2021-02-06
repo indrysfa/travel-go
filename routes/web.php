@@ -36,6 +36,10 @@ Route::group(['prefix' => '/', 'namespace' => 'Frontend'], function () {
     
     // Ika
     Route::get('/promotion', 'PromotionController@promotion')->name('frontend.promotion.index');
+
+    Route::get('/booking', 'PromotionController@promotion')->name('frontend.promotion.detail');
+
+    
 });
 
 
@@ -49,5 +53,6 @@ Route::group(['prefix' => '/admin', 'namespace' => 'Backend'], function () {
     // Route::get('/sewa', 'SewaController@show');
 
     // Ika
-//     Route::get('/promotion', 'PromotionController@index')->name('backend.promotion.index');
+    Route::get('/promotion', 'PromotionController@index')->name('backend.promotion.index');
+    Route::get('/showdata', 'PromotionController@index')->name('backend.promotion.showdata');
 });
