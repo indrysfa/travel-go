@@ -132,7 +132,6 @@
                                 <h3>Jakarta <span class="pull-right">$499</span></h3>
                                 <div class="packages-para">
                                     <h4>Exclusive Studio Apartment at Woodland Park Residence By Travel-Go - Jakarta</h4>
-
                                 </div>
                                 <!--/.packages-para-->
 
