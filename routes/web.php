@@ -55,8 +55,8 @@ Route::group(['prefix' => '/admin', 'namespace' => 'Backend'], function () {
     // Route::delete('/sewa-data-property/{sewa-data-property}', 'SewaController@destroySewaDataProperty')->name('backend.sewa-data-property.destroy');
 
     Route::get('/kategori-fasilitas/create', 'SewaController@createKategoriFasilitas')->name('backend.kategori-fasilitas.create');
-    // Route::post('/kategori-fasilitas', 'SewaController@storeKategoriFasilitas')->name('backend.kategori-fasilitas.store');
-    // Route::get('/kategori-fasilitas/{kategori-fasilitas}', 'SewaController@showKategoriFasilitas')->name('backend.kategori-fasilitas.show');
+    Route::post('/kategori-fasilitas', 'SewaController@storeKategoriFasilitas')->name('backend.kategori-fasilitas.store');
+    Route::get('/kategori-fasilitas/{kategori-fasilitas}', 'SewaController@showKategoriFasilitas')->name('backend.kategori-fasilitas.show');
     // Route::get('/kategori-fasilitas/{kategori-fasilitas}/edit', 'SewaController@editKategoriFasilitas')->name('backend.kategori-fasilitas.edit');
     // Route::put('/kategori-fasilitas/{kategori-fasilitas}', 'SewaController@updateKategoriFasilitas')->name('backend.kategori-fasilitas.update');
     // Route::delete('/kategori-fasilitas/{kategori-fasilitas}', 'SewaController@destroyKategoriFasilitas')->name('backend.kategori-fasilitas.destroy');

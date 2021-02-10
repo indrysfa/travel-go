@@ -76,7 +76,7 @@
             <div class="col-12">
                 <div class="py-4">
                     <h1>Tabel Filter Kategori Fasilitas</h1>
-                    <a href=" {{ route('backend.sewa-data-property.create') }} " class="btn btn-primary"> Tambah Filter
+                    <a href=" {{ route('backend.kategori-fasilitas.create') }} " class="btn btn-primary"> Tambah Filter
                         Fasilitas </a>
                 </div>
 
@@ -102,8 +102,9 @@
                             </tr>
                             <th>{{ $loop->iteration }}</th>
                             {{-- Method 1 (works!!!) --}}
-                            <td><a
-                                    href="{{ route('backend.kategori-fasilitas.show', ['backendSewaDataProperty' => $bkf->id]) }}">
+                            <td>
+                                <a
+                                    href="{{ route('backend.kategori-fasilitas.show', ['backendKategoriFasilitas' => $bkf->id]) }}">
                                     {{ $bkf->nm_fasilitas_id }} </a>
                             </td>
 

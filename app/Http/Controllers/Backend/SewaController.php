@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Backend;
 
 // use App\TipeProperty;
+use App\fasilitas;
+use App\building;
 use App\Property;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -34,7 +36,7 @@ class SewaController extends Controller
 
     public function createKategoriFasilitas()
     {
-        //
+        return view('backend.sewa.createfasilitas');
     }
 
     public function createKategoriBuilding()
@@ -55,7 +57,13 @@ class SewaController extends Controller
 
     public function storeKategoriFasilitas(Request $request)
     {
-        //
+        $validateData = $request->validate([
+            'nm_fasilitas_id' => 'required',
+        ]);
+
+        Property::create($validateData);
+        $request->session()->flash('pesan', "Data {$validateData['backendKategoriFasilitas']} berhasil di simpan! ");
+        return redirect()->route('/sewa'); 
     }
 
     public function storeKategoriBuilding(Request $request)
