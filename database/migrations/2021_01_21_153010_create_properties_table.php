@@ -17,7 +17,7 @@ class CreatePropertiesTable extends Migration
             $table->id();
             $table->date('tgl_join');
             $table->string('nama');
-            $table->char('alamat');
+            $table->text('alamat');
             $table->string('kota');
             $table->integer('harga');
             $table->date('checkin');

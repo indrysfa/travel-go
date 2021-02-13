@@ -4,43 +4,44 @@
 @section('content')
     <div class="row">
         <div class="col-sm-12">
-            <form role="form" action="{{ route('badd.property') }}" method="post" enctype="multipart/form-data">
+            <form role="form" action="{{ route('bupdate.property', $property->id) }}" method="post"
+                enctype="multipart/form-data">
                 @csrf
+                @method('PUT')
                 <div class="card-body">
                     <div class="form-group">
                         <div class="row">
                             <div class="col-sm-4">
                                 <label for="tgl_join">Date Join</label>
                                 <input type="date" class="form-control" id="tgl_join" name="tgl_join"
-                                    value="{{ old('tgl_join') }}" placeholder="Enter Your Date">
+                                    value="{{ old('tgl_join', $property->tgl_join) }}">
                             </div>
                             <div class="col-sm-4">
                                 <label for="checkin">Checkin</label>
                                 <input type="date" class="form-control" id="checkin" name="checkin"
-                                    value="{{ old('checkin') }}">
+                                    value="{{ old('checkin', $property->checkin) }}">
                             </div>
                             <div class="col-sm-4">
                                 <label for="checkout">Checkout</label>
                                 <input type="date" class="form-control" id="checkout" name="checkout"
-                                    value="{{ old('checkout') }}">
+                                    value="{{ old('checkout', $property->checkout) }}">
                             </div>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="nama">Nama Property</label>
-                        <input type="text" class="form-control" id="nama" name="nama" value="{{ old('nama') }}"
-                            placeholder="Enter Your Name">
+                        <input type="text" class="form-control" id="nama" name="nama"
+                            value="{{ old('nama', $property->nama) }}">
                     </div>
                     <div class="form-group">
                         <label for="alamat">Alamat</label>
-                        <textarea type="text" class="form-control" id="alamat" name="alamat" value="{{ old('alamat') }}"
-                            placeholder="Enter Your Address"></textarea>
+                        <textarea type="text" class="form-control" id="alamat" name="alamat">{{ old('alamat', $property->alamat) }}</textarea>
                     </div>
                     <div class="form-group">
                         <div class="col-sm-4">
                             <label for="kota">Kota</label>
-                            <input type="text" class="form-control" id="kota" name="kota" value="{{ old('kota') }}"
-                                placeholder="Enter Your City">
+                            <input type="text" class="form-control" id="kota" name="kota"
+                                value="{{ old('kota', $property->kota) }}">
                         </div>
                     </div>
                     <div class="form-group">
@@ -49,8 +50,8 @@
                                 <label for="tipe_property">Tipe Property</label>
                                 <select name="tipe_property_id" id="tipe_property_id" class="form-control">
                                     @foreach ($data as $d)
-                                        <option value="{{ $d->id }}"
-                                            {{ old('tipe_property_id') == "$d->tipe_property" ? selected : '' }}>
+                                        <option name="tipe_property_id" value="{{ $d->id }}"
+                                            {{ old('tipe_property_id') ?? $d->tipe_property == $d->id ? 'selected' : '' }}>
                                             {{ $d->tipe_property }}
                                         </option>
                                     @endforeach
@@ -59,12 +60,12 @@
                             <div class="col-sm-4">
                                 <label for="tower">Tower</label>
                                 <input type="text" class="form-control" id="tower" name="tower"
-                                    value="{{ old('tower') }}" placeholder="Enter Your Size">
+                                    value="{{ old('tower', $property->tower) }}">
                             </div>
                             <div class="col-sm-4">
                                 <label for="number">Lantai</label>
                                 <input type="text" class="form-control" id="lantai" name="lantai"
-                                    value="{{ old('lantai') }}" placeholder="Enter Your Floor">
+                                    value="{{ old('lantai', $property->lantai) }}">
                             </div>
                         </div>
                     </div>
@@ -73,7 +74,7 @@
                         <select name="nm_building_id" id="nm_building_id" class="form-control">
                             @foreach ($building as $d)
                                 <option value="{{ $d->id }}"
-                                    {{ (old('nm_building_id') == "$d->nm_building") ? "selected" : '' }}>
+                                    {{ old('nm_building_id') == "$d->nm_building" ? 'selected' : '' }}>
                                     {{ $d->nm_building }}
                                 </option>
                             @endforeach
@@ -84,7 +85,7 @@
                         <select name="nm_fasilitas_id" id="nm_fasilitas_id" class="form-control">
                             @foreach ($fasilitas as $d)
                                 <option value="{{ $d->id }}"
-                                    {{ (old('nm_fasilitas_id') == "$d->nm_fasilitas") ? "selected" : '' }}>
+                                    {{ old('nm_fasilitas_id') == "$d->nm_fasilitas" ? 'selected' : '' }}>
                                     {{ $d->nm_fasilitas }}
                                 </option>
                             @endforeach
@@ -96,17 +97,18 @@
                             <div class="col-sm-4">
                                 <label for="ukuran">Ukuran</label>
                                 <input type="text" class="form-control" id="ukuran" name="ukuran"
-                                    value="{{ old('ukuran') }}" placeholder="Enter Your Size">
+                                    value="{{ old('ukuran', $property->ukuran) }}" placeholder="Enter Your Size">
                             </div>
                             <div class="col-sm-4">
                                 <label for="kamar_mandi">Kamar Mandi</label>
                                 <input type="text" class="form-control" id="kamar_mandi" name="kamar_mandi"
-                                    value="{{ old('kamar_mandi') }}" placeholder="Enter Your Bathroom">
+                                    value="{{ old('kamar_mandi', $property->kamar_mandi) }}"
+                                    placeholder="Enter Your Bathroom">
                             </div>
                             <div class="col-sm-4">
                                 <label for="tipe_kamar">Tipe Kamar</label>
                                 <input type="text" class="form-control" id="tipe_kamar" name="tipe_kamar"
-                                    value="{{ old('tipe_kamar') }}" placeholder="Enter Your Tipe">
+                                    value="{{ old('tipe_kamar', $property->tipe_kamar) }}" placeholder="Enter Your Tipe">
                             </div>
                         </div>
                     </div>
@@ -115,30 +117,27 @@
                             <div class="col-sm-4">
                                 <label for="kasur">Kasur</label>
                                 <input type="text" class="form-control" id="kasur" name="kasur"
-                                    value="{{ old('kasur') }}" placeholder="Enter Your Bed">
+                                    value="{{ old('kasur', $property->kasur) }}">
                             </div>
                             <div class="col-sm-4">
                                 <label for="jml_unit">Jumlah Unit</label>
                                 <input type="number" class="form-control" id="jml_unit" name="jml_unit"
-                                    value="{{ old('jml_unit') }}" placeholder="Enter Your Units">
+                                    value="{{ old('jml_unit', $property->jml_unit) }}">
                             </div>
                         </div>
                     </div>
 
                     <div class="form-group">
-
-                    </div>
-                    <div class="form-group">
                         <div class="row">
                             <div class="col-sm-4">
                                 <label for="biaya_kebersihan">Biaya Kebersihan</label>
                                 <input type="number" class="form-control" id="biaya_kebersihan" name="biaya_kebersihan"
-                                    value="{{ old('biaya_kebersihan') }}" placeholder="Enter Your Cleaning Fee">
+                                    value="{{ old('biaya_kebersihan', $property->biaya_kebersihan) }}">
                             </div>
                             <div class="col-sm-4">
                                 <label for="tambah_orang">Tambahan Orang</label>
                                 <input type="number" class="form-control" id="tambah_orang" name="tambah_orang"
-                                    value="{{ old('tambah_orang') }}" placeholder="Enter Your People">
+                                    value="{{ old('tambah_orang', $property->tambah_orang) }}">
                             </div>
                         </div>
                     </div>
@@ -148,10 +147,12 @@
                             <div class="col-sm-4">
                                 <label for="harga">Harga</label>
                                 <input type="text" class="form-control" id="harga" name="harga"
-                                    value="{{ old('harga') }}" placeholder="Enter Your Price">
+                                    value="{{ old('harga', $property->harga) }}">
                             </div>
                             <div class="form-group">
                                 <label for="gambar1">Cover gambar1</label>
+                                <img style="width: 200px" class="img-fluid"
+                                    src="{{ Storage::url('public/image/' . $property->gambar1) }}" alt="error">
                                 <input type="file" class="form-control @error('gambar1') is-invalid @enderror" id="gambar1"
                                     name="gambar1">
 
@@ -167,6 +168,8 @@
                         <div class="row">
                             <div class="form-group">
                                 <label for="gambar2">Gambar 2</label>
+                                <img style="width: 200px" class="img-fluid"
+                                    src="{{ Storage::url('public/image/' . $property->gambar2) }}" alt="error">
                                 <input type="file" class="form-control @error('gambar2') is-invalid @enderror" id="gambar2"
                                     name="gambar2">
 
@@ -178,6 +181,8 @@
                             </div>
                             <div class="form-group">
                                 <label for="gambar3">Gambar 3</label>
+                                <img style="width: 200px" class="img-fluid"
+                                    src="{{ Storage::url('public/image/' . $property->gambar3) }}" alt="error">
                                 <input type="file" class="form-control @error('gambar3') is-invalid @enderror" id="gambar3"
                                     name="gambar3">
 
@@ -189,6 +194,8 @@
                             </div>
                             <div class="form-group">
                                 <label for="gambar4">Gambar 4</label>
+                                <img style="width: 200px" class="img-fluid"
+                                    src="{{ Storage::url('public/image/' . $property->gambar4) }}" alt="error">
                                 <input type="file" class="form-control @error('gambar4') is-invalid @enderror" id="gambar4"
                                     name="gambar4">
 
@@ -204,6 +211,8 @@
                         <div class="row">
                             <div class="form-group">
                                 <label for="gambar5">Gambar 5</label>
+                                <img style="width: 200px" class="img-fluid"
+                                    src="{{ Storage::url('public/image/' . $property->gambar5) }}" alt="error">
                                 <input type="file" class="form-control @error('gambar5') is-invalid @enderror" id="gambar5"
                                     name="gambar5">
 
@@ -215,6 +224,8 @@
                             </div>
                             <div class="form-group">
                                 <label for="gambar6">Gambar 6</label>
+                                <img style="width: 200px" class="img-fluid"
+                                    src="{{ Storage::url('public/image/' . $property->gambar6) }}" alt="error">
                                 <input type="file" class="form-control @error('gambar6') is-invalid @enderror" id="gambar6"
                                     name="gambar6">
 
@@ -226,6 +237,8 @@
                             </div>
                             <div class="form-group">
                                 <label for="gambar7">Gambar 7</label>
+                                <img style="width: 200px" class="img-fluid"
+                                    src="{{ Storage::url('public/image/' . $property->gambar7) }}" alt="error">
                                 <input type="file" class="form-control @error('gambar7') is-invalid @enderror" id="gambar7"
                                     name="gambar7">
 
@@ -237,23 +250,12 @@
                             </div>
                         </div>
                     </div>
-                    {{-- <div class="form-group">
-                        <label for="nm_fasilitas">Fasilitas</label>
-                        <select name="nm_fasilitas_id" id="nm_fasilitas_id" class="form-control">
-                            @foreach ($data as $d)
-                                <option value="{{ $d->id }}"
-                                    {{ old('nm_fasilitas_id') == "$d->nm_fasilitas" ? selected : '' }}>
-                                    {{ $d->nm_fasilitas }}
-                                </option>
-                            @endforeach
-                        </select>
-                    </div> --}}
                 </div>
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                    <button type="submit" class="btn btn-primary">Add</button>
-                    <button type="submit" class="btn btn-danger"><a href="">Cancel</a></button>
+                    <button type="submit" class="btn btn-primary">Save Change</button>
+                    <button type="submit" class="btn btn-danger"><a href="{{ route('bhome.show') }}">Cancel</a></button>
                 </div>
             </form>
         </div>
