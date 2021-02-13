@@ -9,13 +9,13 @@
             <br>
             <h1 class="text-center"> DATA FASILITAS </h1>
             <hr>
-            <form action="{{ route('backend.kategori-fasilitas.store') }} " method="POST">
+            <form action="{{ route('backend.kategori-building.store') }} " method="POST">
                 @csrf
                 <div class="form-group">
-                    <label for="nm_fasilitas">Nama Fasilitas</label>
-                    <input type="text" class="form-control @error('nm_fasilitas') is-invalid @enderror" id="nm_fasilitas" name="nm_fasilitas" 
-                    value="{{ old('nm_fasilitas') }}">
-                    @error('nm_fasilitas')
+                    <label for="nm_building">Nama Building</label>
+                    <input type="text" class="form-control @error('nm_building') is-invalid @enderror" id="nm_building" name="nm_building" 
+                    value="{{ old('nm_building') }}">
+                    @error('nm_building')
                         <div class="text-danger">  {{ $message }} </div>
                     @enderror
                 </div>

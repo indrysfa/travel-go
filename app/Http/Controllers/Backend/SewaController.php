@@ -18,10 +18,25 @@ class SewaController extends Controller
      */
     public function index()
     {
+        return view('backend.sewa.index');
+    }
+
+    public function indexBackendSewaDataProperty()
+    {
         $backendSewaDataProperty = Property::all();
-        $backendKategoriFasilitas = Property::all();
-        $backendKategoriBuilding = Property::all();
-        return view('backend.sewa.index', compact('backendSewaDataProperty', 'backendKategoriFasilitas', 'backendKategoriBuilding'));
+        return view('backend.sewa.index-sewa-data-property', compact('backendSewaDataProperty'));
+    }
+
+    public function indexBackendKategoriFasilitas()
+    {
+        $backendKategoriFasilitas = fasilitas::all();
+        return view('backend.sewa.indexfasilitas', compact('backendKategoriFasilitas'));
+    }
+
+    public function indexBackendKategoriBuilding()
+    {
+        $backendKategoriBuilding = building::all();
+        return view('backend.sewa.indexbuilding', compact('backendKategoriBuilding'));
     }
 
     /**
@@ -41,7 +56,7 @@ class SewaController extends Controller
 
     public function createKategoriBuilding()
     {
-        //
+        return view('backend.sewa.createbuilding');
     }
 
     /**
@@ -58,17 +73,25 @@ class SewaController extends Controller
     public function storeKategoriFasilitas(Request $request)
     {
         $validateData = $request->validate([
-            'nm_fasilitas_id' => 'required',
+            'nm_fasilitas' => 'required',
         ]);
-
-        Property::create($validateData);
-        $request->session()->flash('pesan', "Data {$validateData['backendKategoriFasilitas']} berhasil di simpan! ");
-        return redirect()->route('/sewa'); 
+        // dd($validateData);
+        $data = fasilitas::create($validateData);
+        // dd ($data);
+        $request->session()->flash('pesan', "Data {$validateData['nm_fasilitas']} berhasil di simpan! ");
+        return redirect()->route('backend.kategori-fasilitas.index');
     }
 
     public function storeKategoriBuilding(Request $request)
     {
-        //
+        $validateData = $request->validate([
+            'nm_building' => 'required',
+        ]);
+        // dd($validateData);
+        $data = building::create($validateData);
+        // dd ($data);
+        $request->session()->flash('pesan', "Data {$validateData['nm_building']} berhasil di simpan! ");
+        return redirect()->route('backend.kategori-building.index');
     }
 
     /**
@@ -82,14 +105,14 @@ class SewaController extends Controller
         //
     }
 
-    public function showKategoriFasilitas($id)
+    public function showKategoriFasilitas(fasilitas $backendKategoriFasilitas)
     {
-        //
+        return view('backend.sewa.showfasilitas', compact('backendKategoriFasilitas'));
     }
 
-    public function showKategoriBuilding($id)
+    public function showKategoriBuilding(building $backendKategoriBuilding)
     {
-        //
+        return view('backend.sewa.showbuilding', compact('backendKategoriBuilding'));
     }
 
     /**
@@ -103,14 +126,14 @@ class SewaController extends Controller
         //
     }
 
-    public function editKategoriFasilitas($id)
+    public function editKategoriFasilitas(fasilitas $backendKategoriFasilitas)
     {
-        //
+        return view('backend.sewa.editfasilitas', compact('backendKategoriFasilitas'));
     }
 
-    public function editKategoriBuilding($id)
+    public function editKategoriBuilding(building $backendKategoriBuilding)
     {
-        //
+        return view('backend.sewa.editbuilding', compact('backendKategoriBuilding'));
     }
 
     /**
@@ -125,14 +148,22 @@ class SewaController extends Controller
         //
     }
 
-    public function updateKategoriFasilitas(Request $request, $id)
+    public function updateKategoriFasilitas(Request $request, fasilitas $backendKategoriFasilitas)
     {
-        //
+        $validateData = $request->validate([
+            'nm_fasilitas' => 'required',
+        ]);
+        $backendKategoriFasilitas->update($validateData);
+        return redirect()->route('backend.kategori-fasilitas.index')->with('pesan', "Update Data {$backendKategoriFasilitas->nm_fasilitas} BERHASIL");
     }
 
-    public function updateKategoriBuilding(Request $request, $id)
+    public function updateKategoriBuilding(Request $request,building $backendKategoriBuilding)
     {
-        //
+        $validateData = $request->validate([
+            'nm_building' => 'required',
+        ]);
+        $backendKategoriBuilding->update($validateData);
+        return redirect()->route('backend.kategori-building.index')->with('pesan', "Update Data {$backendKategoriBuilding->nm_building} BERHASIL");
     }
 
 
@@ -147,14 +178,15 @@ class SewaController extends Controller
         //
     }
 
-    public function destroyKategoriFasilitas($id)
+    public function destroyKategoriFasilitas(fasilitas $backendKategoriFasilitas)
     {
-        //
+        $backendKategoriFasilitas->delete();
+        return redirect()->route('backend.kategori-fasilitas.index')->with('pesan', "Hapus Data $backendKategoriFasilitas->nm_fasilitas BERHASIL");
     }
 
-    public function destroyKategoriBuilding($id)
+    public function destroyKategoriBuilding(building $backendKategoriBuilding)
     {
-        //
+        $backendKategoriBuilding->delete();
+        return redirect()->route('backend.kategori-building.index')->with('pesan', "Hapus Data $backendKategoriBuilding->nm_building BERHASIL");
     }
-
 }
