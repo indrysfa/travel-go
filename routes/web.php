@@ -50,11 +50,11 @@ Route::group(['prefix' => '/admin', 'namespace' => 'Backend'], function () {
 
     Route::get('/sewa-data-property', 'SewaController@indexBackendSewaDataProperty')->name('backend.sewa-data-property.index');
     Route::get('/sewa-data-property/create', 'SewaController@createSewaDataProperty')->name('backend.sewa-data-property.create');
-    // Route::post('/sewa-data-property', 'SewaController@storeSewaDataProperty')->name('backend.sewa-data-property.store');
-    // Route::get('/sewa-data-property/{backendSewaDataProperty}', 'SewaController@showSewaDataProperty')->name('backend.sewa-data-property.show');
-    // Route::get('/sewa-data-property/{backendSewaDataProperty}/edit', 'SewaController@editSewaDataProperty')->name('backend.sewa-data-property.edit');
-    // Route::put('/sewa-data-property/{backendSewaDataProperty}', 'SewaController@updateSewaDataProperty')->name('backend.sewa-data-property.update');
-    // Route::delete('/sewa-data-property/{sewa-data-property}', 'SewaController@destroySewaDataProperty')->name('backend.sewa-data-property.destroy');
+    Route::post('/sewa-data-property', 'SewaController@storeSewaDataProperty')->name('backend.sewa-data-property.store');
+    Route::get('/sewa-data-property/{backendSewaDataProperty}', 'SewaController@showSewaDataProperty')->name('backend.sewa-data-property.show');
+    Route::get('/sewa-data-property/{backendSewaDataProperty}/edit', 'SewaController@editSewaDataProperty')->name('backend.sewa-data-property.edit');
+    Route::put('/sewa-data-property/{backendSewaDataProperty}', 'SewaController@updateSewaDataProperty')->name('backend.sewa-data-property.update');
+    Route::delete('/sewa-data-property/{sewa-data-property}', 'SewaController@destroySewaDataProperty')->name('backend.sewa-data-property.destroy');
 
     Route::get('/sewa-kategori-fasilitas', 'SewaController@indexBackendKategoriFasilitas')->name('backend.kategori-fasilitas.index');
     Route::get('/kategori-fasilitas/create', 'SewaController@createKategoriFasilitas')->name('backend.kategori-fasilitas.create');

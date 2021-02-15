@@ -1,5 +1,5 @@
 @extends('backend.layouts.app')
-@section('title', 'Admin - Sewa Building')
+@section('title', 'Admin Building - Sewa')
 
 @section('content')
 

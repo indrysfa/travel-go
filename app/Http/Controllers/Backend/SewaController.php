@@ -46,7 +46,7 @@ class SewaController extends Controller
      */
     public function createSewaDataProperty()
     {
-        //
+        return view('backend.sewa.create-sewa-data-property');
     }
 
     public function createKategoriFasilitas()
@@ -67,7 +67,32 @@ class SewaController extends Controller
      */
     public function storeSewaDataProperty(Request $request)
     {
-        //
+        $this->validate($request, [
+            'nama' => 'required|min:3|max:50',
+            'tipe_property_id' => 'required',
+            'kasur' => 'required',
+            'kamar_mandi' => 'required',
+            'kota' => 'required',
+            'jml_unit' => 'required',
+            'harga' => 'required',
+        ]);
+
+        
+
+        $backendSewaDataProperty = Property::create([
+            'nama' => $request -> nama,
+            'tipe_property_id' => $request->tipe_property_id,
+            'kasur' => $request->kasur,
+            'kamar_mandi' => $request->kamar_mandi,
+            'kota' => $request->kota,
+            'jml_unit' => $request->jml_unit,
+            'harga' => $request->harga,
+        ]);
+
+        if ($backendSewaDataProperty) {
+            $request->session()->flash('pesan', "Data {$this ['nama']} berhasil di simpan! ");
+            return redirect()->route('backend.sewa-data-property.index');
+        }
     }
 
     public function storeKategoriFasilitas(Request $request)
@@ -100,9 +125,9 @@ class SewaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function showSewaDataProperty($id)
+    public function showSewaDataProperty(Property $backendSewaDataProperty)
     {
-        //
+        return view('backend.sewa.show-sewa-data-property', compact('backendSewaDataProperty'));
     }
 
     public function showKategoriFasilitas(fasilitas $backendKategoriFasilitas)
@@ -121,9 +146,9 @@ class SewaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function editSewaDataProperty($id)
+    public function editSewaDataProperty(Property $backendSewaDataProperty)
     {
-        //
+        return view('backend.sewa.edit-sewa-data-property', compact('backendSewaDataProperty'));
     }
 
     public function editKategoriFasilitas(fasilitas $backendKategoriFasilitas)
@@ -143,7 +168,7 @@ class SewaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function updateSewaDataProperty(Request $request, $id)
+    public function updateSewaDataProperty(Request $request, Property $backendSewaDataProperty)
     {
         //
     }
@@ -173,9 +198,10 @@ class SewaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroySewaDataProperty($id)
+    public function destroySewaDataProperty(Property $backendSewaDataProperty)
     {
-        //
+        $backendSewaDataProperty->delete();
+        return redirect()->route('backend.sewa-data-property.index')->with('pesan', "Hapus Data $backendSewaDataProperty->nama BERHASIL");
     }
 
     public function destroyKategoriFasilitas(fasilitas $backendKategoriFasilitas)
