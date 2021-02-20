@@ -103,17 +103,18 @@
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <form action="{{ route('bform.tipe') }}" method="post">
+                                <form action="{{ route('badd.tipe') }}" method="post">
+                                    @csrf
                                     <div class="form-group">
                                         <label for="tipe_property">Tipe Property</label>
                                         <input type="text" class="form-control" id="tipe_property" name="tipe_property" value="{{ old('tipe_property') }}"
                                             placeholder="Enter Your Name">
                                     </div>
+                                    <button type="submit" class="btn btn-primary">Add Property</button>
                                 </form>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Add Property</button>
                             </div>
                         </div>
                     </div>

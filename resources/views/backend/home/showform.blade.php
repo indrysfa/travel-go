@@ -58,8 +58,8 @@
                             </div>
                             <div class="col-sm-4">
                                 <label for="tower">Tower</label>
-                                <input type="text" class="form-control" id="tower" name="tower" value="{{ old('tower') }}"
-                                    placeholder="Enter Your Size">
+                                <input type="text" class="form-control" id="tower" name="tower"
+                                    value="{{ old('tower') }}" placeholder="Enter Your Size">
                             </div>
                             <div class="col-sm-4">
                                 <label for="number">Lantai</label>
@@ -103,8 +103,8 @@
                         <div class="row">
                             <div class="col-sm-4">
                                 <label for="kasur">Kasur</label>
-                                <input type="text" class="form-control" id="kasur" name="kasur" value="{{ old('kasur') }}"
-                                    placeholder="Enter Your Bed">
+                                <input type="text" class="form-control" id="kasur" name="kasur"
+                                    value="{{ old('kasur') }}" placeholder="Enter Your Bed">
                             </div>
                             <div class="col-sm-4">
                                 <label for="jml_unit">Jumlah Unit</label>
@@ -133,9 +133,98 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="harga">Harga</label>
-                        <input type="text" class="form-control" id="harga" name="harga" value="{{ old('harga') }}"
-                            placeholder="Enter Your Price">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <label for="harga">Harga</label>
+                                <input type="text" class="form-control" id="harga" name="harga"
+                                    value="{{ old('harga') }}" placeholder="Enter Your Price">
+                            </div>
+                            <div class="form-group">
+                                <label for="gambar1">Cover gambar1</label>
+                                <input type="file" class="form-control @error('gambar1') is-invalid @enderror" id="gambar1"
+                                    name="gambar1">
+
+                                @error('image')
+                                    <div class="alert alert-danger mt-2">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="form-group">
+                                <label for="gambar2">Gambar 2</label>
+                                <input type="file" class="form-control @error('gambar2') is-invalid @enderror" id="gambar2"
+                                    name="gambar2">
+
+                                @error('image')
+                                    <div class="alert alert-danger mt-2">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <label for="gambar3">Gambar 3</label>
+                                <input type="file" class="form-control @error('gambar3') is-invalid @enderror" id="gambar3"
+                                    name="gambar3">
+
+                                @error('image')
+                                    <div class="alert alert-danger mt-2">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <label for="gambar4">Gambar 4</label>
+                                <input type="file" class="form-control @error('gambar4') is-invalid @enderror" id="gambar4"
+                                    name="gambar4">
+
+                                @error('image')
+                                    <div class="alert alert-danger mt-2">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="form-group">
+                                <label for="gambar5">Gambar 5</label>
+                                <input type="file" class="form-control @error('gambar5') is-invalid @enderror" id="gambar5"
+                                    name="gambar5">
+
+                                @error('image')
+                                    <div class="alert alert-danger mt-2">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <label for="gambar6">Gambar 6</label>
+                                <input type="file" class="form-control @error('gambar6') is-invalid @enderror" id="gambar6"
+                                    name="gambar6">
+
+                                @error('image')
+                                    <div class="alert alert-danger mt-2">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <label for="gambar7">Gambar 7</label>
+                                <input type="file" class="form-control @error('gambar7') is-invalid @enderror" id="gambar7"
+                                    name="gambar7">
+
+                                @error('image')
+                                    <div class="alert alert-danger mt-2">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
+                        </div>
                     </div>
                     {{-- <div class="form-group">
                         <label for="nm_fasilitas">Fasilitas</label>
