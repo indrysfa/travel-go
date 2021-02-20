@@ -132,7 +132,7 @@
                         <div class="card mb-9 mb-3" style="max-width: 940px;">
                             <div class="row no-gutters">
                                 <div class="col-md-4">
-                                    <img src="{{ Storage::url }}" class="card-img img-fluid"
+                                    <img src="{{ Storage::url('../assets/frontend/images/'.$fsdp->gambar1) }}" class="card-img img-fluid"
                                         alt="produk">
                                 </div>
                                 <div class="col-md-8">
