@@ -29,7 +29,7 @@ use Illuminate\Support\Facades\Route;
 Route::group(['prefix' => '/', 'namespace' => 'Frontend'], function () {
     // Indry
     Route::get('/', 'HomeController@index')->name('home.index');
-    Route::get('/sewa-detail', 'HomeController@store')->name('sewa.detail');
+    Route::get('/sewa-detail/{property}', 'HomeController@show')->name('sewa.index');
 
     //Hendy
     Route::get('/sewa', 'SewaController@index')->name('frontend.sewa.index');

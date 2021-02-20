@@ -255,7 +255,7 @@
 
                 <div class="card-footer">
                     <button type="submit" class="btn btn-primary">Save Change</button>
-                    <button type="submit" class="btn btn-danger"><a href="{{ route('bhome.show') }}">Cancel</a></button>
+                    <a href="{{ route('bhome.show') }}" class="btn btn-danger">Cancel</a>
                 </div>
             </form>
         </div>

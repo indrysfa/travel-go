@@ -199,7 +199,7 @@
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                    <button type="submit" class="btn btn-danger"><a href="{{ route('bhome.show') }}">Back</a></button>
+                    <a href="{{ route('bhome.show') }}" class="btn btn-danger">Cancel</a>
                 </div>
             </form>
         </div>

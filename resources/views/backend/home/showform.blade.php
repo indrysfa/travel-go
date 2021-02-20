@@ -73,7 +73,7 @@
                         <select name="nm_building_id" id="nm_building_id" class="form-control">
                             @foreach ($building as $d)
                                 <option value="{{ $d->id }}"
-                                    {{ (old('nm_building_id') == "$d->nm_building") ? "selected" : '' }}>
+                                    {{ old('nm_building_id') == "$d->nm_building" ? 'selected' : '' }}>
                                     {{ $d->nm_building }}
                                 </option>
                             @endforeach
@@ -84,7 +84,7 @@
                         <select name="nm_fasilitas_id" id="nm_fasilitas_id" class="form-control">
                             @foreach ($fasilitas as $d)
                                 <option value="{{ $d->id }}"
-                                    {{ (old('nm_fasilitas_id') == "$d->nm_fasilitas") ? "selected" : '' }}>
+                                    {{ old('nm_fasilitas_id') == "$d->nm_fasilitas" ? 'selected' : '' }}>
                                     {{ $d->nm_fasilitas }}
                                 </option>
                             @endforeach
@@ -253,7 +253,7 @@
 
                 <div class="card-footer">
                     <button type="submit" class="btn btn-primary">Add</button>
-                    <button type="submit" class="btn btn-danger"><a href="">Cancel</a></button>
+                    <a href="{{ route('bhome.show') }}" class="btn btn-danger">Cancel</a>
                 </div>
             </form>
         </div>

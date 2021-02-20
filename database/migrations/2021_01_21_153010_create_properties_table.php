@@ -46,7 +46,7 @@ class CreatePropertiesTable extends Migration
 
             $table->foreign('nm_building_id')->references('id')->on('buildings')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('tipe_property_id')->references('id')->on('tipe_properties')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('nm_fasilitas_id')->references('id')->on('fasilitases')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('nm_fasilitas_id')->references('id')->on('fasilitases')->onxUpdate('cascade')->onDelete('cascade');
         });
     }
 
