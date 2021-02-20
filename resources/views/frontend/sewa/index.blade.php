@@ -32,7 +32,7 @@
                         {{-- BY PRICE --}}
                         <div class="sidebar__filter">
                             <div class="section-title">
-                                <h4 >by price</h4>
+                                <h4>by price</h4>
                             </div>
                             <div class="filter-range-wrap">
                                 <div class="price-range ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content"
@@ -61,13 +61,16 @@
                                         </div>
                                         <div id="collapseOne" class="collapse show" data-parent="#accordionExample">
                                             <div class="card-body size__list color__list">
+                                                
+                                                    <ul>
+                                                        @foreach ($frontendKategoriFasilitas as $fkf)
+                                                        <div for="black">
+                                                            <input type="checkbox" id="partner"> {{$fkf->nm_fasilitas}}
+                                                            <span class="checkmark"></span>
+                                                        </div>
+                                                        @endforeach
+                                                    </ul>
 
-                                                <ul>
-                                                    <div for="black">
-                                                        <input type="checkbox" id="partner"> 24-Hour Security
-                                                        <span class="checkmark"></span>
-                                                    </div>
-                                                </ul>
                                             </div>
                                         </div>
                                     </div>
@@ -78,20 +81,12 @@
                                         <div id="collapseTwo" class="collapse" data-parent="#accordionExample">
                                             <div class="card-body size__list color__list">
                                                 <ul>
+                                                    @foreach ($frontendKategoriBuilding as $fkb)
                                                     <div for="black">
-                                                        <input type="checkbox" id="partner"> Pullman
+                                                        <input type="checkbox" id="partner"> {{$fkb->nm_building}}
                                                         <span class="checkmark"></span>
                                                     </div>
-                                                    <div for="black">
-                                                        <input type="checkbox" id="partner"> Mediterania Garden Residence 2
-                                                        Tanjung Duren
-                                                        <span class="checkmark"></span>
-                                                    </div>
-                                                    <div for="black">
-                                                        <input type="checkbox" id="partner"> Apartemen Belmont Residence
-                                                        Puri
-                                                        <span class="checkmark"></span>
-                                                    </div>
+                                                    @endforeach
                                                 </ul>
                                             </div>
                                         </div>
@@ -129,26 +124,27 @@
                     <div class="row">
 
                         @foreach ($frontendSewaDataProperty as $fsdp)
-                        <div class="card mb-9 mb-3" style="max-width: 940px;">
-                            <div class="row no-gutters">
-                                <div class="col-md-4">
-                                    <img src="{{ Storage::url('../assets/frontend/images/'.$fsdp->gambar1) }}" class="card-img img-fluid"
-                                        alt="produk">
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="card-body">
-                                        <h4 class="card-title mb-0 mt-0"><a href="{{ route('sewa.detail') }}">{{$fsdp->nama}}</a></h4>
-                                        <i class="fa fa-building" aria-hidden="true"> {{$fsdp->tipe_property_id}}</i>
-                                        <i class="fa fa-bed" aria-hidden="true">{{$fsdp->kasur}} </i>
-                                        <i class="fa fa-bath" aria-hidden="true"> {{$fsdp->kamar_mandi}}</i>
-                                        <p class="card-text"><small class="text-muted">{{$fsdp->alamat}}, {{$fsdp->kota}}</small>
-                                        </p>
-                                        <p>{{$fsdp->jml_unit}} unit(s) available</p>
-                                        <h1>IDR {{$fsdp->harga}}</h1>
+                            <div class="card mb-9 mb-3" style="max-width: 940px;">
+                                <div class="row no-gutters">
+                                    <div class="col-md-4">
+                                        <img src="{{ Storage::url('image/' . $fsdp->gambar1) }}" class="card-img img-fluid"
+                                            alt="produk">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body">
+                                            <h4 class="card-title mb-0 mt-0"><a href="#">{{ $fsdp->nama }}</a></h4>
+                                            <i class="fa fa-building" aria-hidden="true"> {{ $fsdp->tipe_property_id }}</i>
+                                            <i class="fa fa-bed" aria-hidden="true">{{ $fsdp->kasur }} </i>
+                                            <i class="fa fa-bath" aria-hidden="true"> {{ $fsdp->kamar_mandi }}</i>
+                                            <p class="card-text"><small class="text-muted">{{ $fsdp->alamat }},
+                                                    {{ $fsdp->kota }}</small>
+                                            </p>
+                                            <p>{{ $fsdp->jml_unit }} unit(s) available</p>
+                                            <h1>IDR {{ $fsdp->harga }}</h1>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>               
                         @endforeach
 
 

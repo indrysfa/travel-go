@@ -35,7 +35,7 @@
 
                 <div class="col-lg-6">
                     <div class="product__details__text">
-                        <h3>{{ $property->nama }}</span></h3>
+                        <h3></span></h3>
                         <div class="rating">
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
