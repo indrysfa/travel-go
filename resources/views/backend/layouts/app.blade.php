@@ -124,12 +124,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
-                                <li class="nav-item">
+                                {{-- <li class="nav-item">
                                     <a href="{{ route('backend.sewa-data-property.index') }} " class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Data Sewa Property</p>
                                     </a>
-                                </li>
+                                </li> --}}
                                 <li class="nav-item">
                                     <a href="{{ route('backend.kategori-fasilitas.index') }} " class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
@@ -212,7 +212,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 Anything you want
             </div>
             <!-- Default to the left -->
-            <strong>Copyright &copy; 2021 <a href="http://indrysfa.com/">travel-go</a>.</strong> All rights reserved.
+            <strong>Copyright &copy; 2021 <a href="#">travel-go</a>.</strong> All rights reserved.
         </footer>
     </div>
     <!-- ./wrapper -->

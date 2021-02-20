@@ -1,4 +1,4 @@
-@extends('backend.layouts.app')
+{{-- @extends('backend.layouts.app')
 @section('title', 'Admin Data Property- Sewa')
 
 @section('content')
@@ -21,7 +21,6 @@
                 <table class="table table-striped mx-auto">
                     <thead>
                         <tr>
-                            {{-- ada 9 col --}}
                             <th scope="col">#</th>
                             <th scope="col">Nama Property</th>
                             <th scope="col">Tipe Property</th>
@@ -39,7 +38,7 @@
 
                             </tr>
                             <th>{{ $loop->iteration }}</th>
-                            {{-- Method 1 (works!!!) --}}
+
                             <td><a
                                     href="{{ route('backend.sewa-data-property.show', ['backendSewaDataProperty' => $bsdp->id]) }}">
                                     {{ $bsdp->nm_building_id }} </a>
@@ -71,4 +70,4 @@
         </div>
     </div>
 
-@endsection
+@endsection --}}

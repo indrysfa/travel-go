@@ -61,17 +61,10 @@
                                         </div>
                                         <div id="collapseOne" class="collapse show" data-parent="#accordionExample">
                                             <div class="card-body size__list color__list">
+
                                                 <ul>
                                                     <div for="black">
                                                         <input type="checkbox" id="partner"> 24-Hour Security
-                                                        <span class="checkmark"></span>
-                                                    </div>
-                                                    <div for="black">
-                                                        <input type="checkbox" id="partner"> 24-Hours Room Service
-                                                        <span class="checkmark"></span>
-                                                    </div>
-                                                    <div for="black">
-                                                        <input type="checkbox" id="partner"> ATM On Site
                                                         <span class="checkmark"></span>
                                                     </div>
                                                 </ul>
@@ -134,49 +127,30 @@
                 </div>
                 <div class="col-lg-9 col-md-9">
                     <div class="row">
-                        <div class="card mb-9 mb-3" style="max-width: 940px;">
-                            <div class="row no-gutters">
-                                <div class="col-md-4">
-                                    <img src="{{ asset('assets/frontend/images/bali.jpg') }}" class="card-img img-fluid"
-                                        alt="produk">
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="card-body">
-                                        <h4 class="card-title mb-0 mt-0"><a href="{{ route('sewa.detail') }}">Opulent 2BR
-                                                Residence at Ciputra International Apartment By Travelio - Jakarta</a></h4>
-                                        <i class="fa fa-building" aria-hidden="true"> Apartemen</i>
-                                        <i class="fa fa-bed" aria-hidden="true"> 2</i>
-                                        <i class="fa fa-bath" aria-hidden="true"> 2</i>
-                                        <p class="card-text"><small class="text-muted">Gunung Sahari, Jakarta Pusat</small>
-                                        </p>
-                                        <p>1 unit(s) available</p>
-                                        <h1>IDR 100.000</h1>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
 
+                        @foreach ($frontendSewaDataProperty as $fsdp)
                         <div class="card mb-9 mb-3" style="max-width: 940px;">
                             <div class="row no-gutters">
                                 <div class="col-md-4">
-                                    <img src="{{ asset('assets/frontend/images/bali.jpg') }}" class="card-img img-fluid"
+                                    <img src="{{ Storage::url }}" class="card-img img-fluid"
                                         alt="produk">
                                 </div>
                                 <div class="col-md-8">
                                     <div class="card-body">
-                                        <h4 class="card-title"><a href="#">Exquisite 3BR Residence at Ciputra International
-                                                Apartment By Travelio - Jakarta</a></h4>
-                                        <i class="fa fa-building" aria-hidden="true"> Apartemen</i>
-                                        <i class="fa fa-bed" aria-hidden="true"> 2</i>
-                                        <i class="fa fa-bath" aria-hidden="true"> 2</i>
-                                        <p class="card-text"><small class="text-muted">Gunung Sahari, Jakarta Pusat</small>
+                                        <h4 class="card-title mb-0 mt-0"><a href="{{ route('sewa.detail') }}">{{$fsdp->nama}}</a></h4>
+                                        <i class="fa fa-building" aria-hidden="true"> {{$fsdp->tipe_property_id}}</i>
+                                        <i class="fa fa-bed" aria-hidden="true">{{$fsdp->kasur}} </i>
+                                        <i class="fa fa-bath" aria-hidden="true"> {{$fsdp->kamar_mandi}}</i>
+                                        <p class="card-text"><small class="text-muted">{{$fsdp->alamat}}, {{$fsdp->kota}}</small>
                                         </p>
-                                        <p>12 unit(s) available</p>
-                                        <h1>IDR 300.000</h1>
+                                        <p>{{$fsdp->jml_unit}} unit(s) available</p>
+                                        <h1>IDR {{$fsdp->harga}}</h1>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div>               
+                        @endforeach
+
 
                         <div class="col-lg-12 text-center">
                             <div class="pagination__option">

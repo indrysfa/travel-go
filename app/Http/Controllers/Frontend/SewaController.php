@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers\Frontend;
 
+use App\fasilitas;
+use App\building;
+use App\Property;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -12,9 +15,22 @@ class SewaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function indexFrontendSewaDataProperty()
     {
-        return view('frontend.sewa.index');
+        $frontendSewaDataProperty = Property::all();
+        return view('frontend.sewa.index', compact('frontendSewaDataProperty'));
+    }
+
+    public function indexFrontendKategoriFasilitas()
+    {
+        $backendKategoriFasilitas = fasilitas::all();
+        return view('frontend.sewa.index', compact('backendKategoriFasilitas'));
+    }
+
+    public function indexFrontendKategoriBuilding()
+    {
+        $backendKategoriFasilitas = building::all();
+        return view('frontend.sewa.index', compact('backendKategoriBuilding'));
     }
 
     /**

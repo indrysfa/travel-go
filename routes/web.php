@@ -32,7 +32,9 @@ Route::group(['prefix' => '/', 'namespace' => 'Frontend'], function () {
     Route::get('/sewa-detail', 'HomeController@store')->name('sewa.detail');
 
     //Hendy
-    Route::get('/sewa', 'SewaController@index')->name('frontend.sewa.index');
+    Route::get('/sewa', 'HomeController@indexFrontendSewaDataProperty')->name('frontend.sewa.index');
+    Route::get('/sewa-kategori-fasilitas', 'SewaController@indexFrontendKategoriFasilitas')->name('frontend.kategori-fasilitas.index');
+    Route::get('/sewa-kategori-building', 'SewaController@indexFrontendKategoriBuilding')->name('frontend.kategori-building.index');
 
     // Ika
     Route::get('/promotion', 'PromotionController@promotion')->name('frontend.promotion.index');
@@ -48,13 +50,14 @@ Route::group(['prefix' => '/admin', 'namespace' => 'Backend'], function () {
     // Hendy
     Route::get('/sewa', 'SewaController@index')->name('backend.sewa.index');
 
-    Route::get('/sewa-data-property', 'SewaController@indexBackendSewaDataProperty')->name('backend.sewa-data-property.index');
-    Route::get('/sewa-data-property/create', 'SewaController@createSewaDataProperty')->name('backend.sewa-data-property.create');
-    Route::post('/sewa-data-property', 'SewaController@storeSewaDataProperty')->name('backend.sewa-data-property.store');
-    Route::get('/sewa-data-property/{backendSewaDataProperty}', 'SewaController@showSewaDataProperty')->name('backend.sewa-data-property.show');
-    Route::get('/sewa-data-property/{backendSewaDataProperty}/edit', 'SewaController@editSewaDataProperty')->name('backend.sewa-data-property.edit');
-    Route::put('/sewa-data-property/{backendSewaDataProperty}', 'SewaController@updateSewaDataProperty')->name('backend.sewa-data-property.update');
-    Route::delete('/sewa-data-property/{sewa-data-property}', 'SewaController@destroySewaDataProperty')->name('backend.sewa-data-property.destroy');
+    // // GAJADI PAKE // //
+    // Route::get('/sewa-data-property', 'SewaController@indexBackendSewaDataProperty')->name('backend.sewa-data-property.index');
+    // Route::get('/sewa-data-property/create', 'SewaController@createSewaDataProperty')->name('backend.sewa-data-property.create');
+    // Route::post('/sewa-data-property', 'SewaController@storeSewaDataProperty')->name('backend.sewa-data-property.store');
+    // Route::get('/sewa-data-property/{backendSewaDataProperty}', 'SewaController@showSewaDataProperty')->name('backend.sewa-data-property.show');
+    // Route::get('/sewa-data-property/{backendSewaDataProperty}/edit', 'SewaController@editSewaDataProperty')->name('backend.sewa-data-property.edit');
+    // Route::put('/sewa-data-property/{backendSewaDataProperty}', 'SewaController@updateSewaDataProperty')->name('backend.sewa-data-property.update');
+    // Route::delete('/sewa-data-property/{sewa-data-property}', 'SewaController@destroySewaDataProperty')->name('backend.sewa-data-property.destroy');
 
     Route::get('/sewa-kategori-fasilitas', 'SewaController@indexBackendKategoriFasilitas')->name('backend.kategori-fasilitas.index');
     Route::get('/kategori-fasilitas/create', 'SewaController@createKategoriFasilitas')->name('backend.kategori-fasilitas.create');

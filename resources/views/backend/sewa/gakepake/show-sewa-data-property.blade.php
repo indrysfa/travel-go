@@ -1,4 +1,4 @@
-@extends('master')
+{{-- @extends('master')
 
 @section('content')
     
@@ -34,4 +34,4 @@
         </div>
     </div>
 
-@endsection
+@endsection --}}

@@ -1,4 +1,4 @@
-@extends('backend.layouts.app')
+{{-- @extends('backend.layouts.app')
 @section('title', 'Create Data Property - Sewa')
 
 @section('content')
@@ -9,8 +9,7 @@
             <br>
             <h1 class="text-center"> DATA SEWA DATA PROPERTY </h1>
             <hr>
-            <form action="{{ route('backend.kategori-fasilitas.store') }} " method="POST">
-                @method('PUT')
+            <form action="{{ route('backend.sewa-data-property.store') }} " method="POST">
                 @csrf
                 <div class="form-group">
                     <label for="nama">Nama Property</label>
@@ -79,4 +78,4 @@
     </div>
 </div>
 
-@endsection
+@endsection --}}
