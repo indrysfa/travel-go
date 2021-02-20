@@ -63,11 +63,11 @@
                                                     <td>{{ $d->harga }}</td>
                                                     <td>
                                                         <div class="btn-group">
-                                                            <a href="{{ route('detail.property', $d->id) }}"
+                                                            <a href="{{ route('bdetail.property', $d->id) }}"
                                                                 class="btn btn-info"><i class="fas fa-eye"></i></a>
-                                                            <a href="{{ route('edit.property', $d->id) }}"
+                                                            <a href="{{ route('bedit.property', $d->id) }}"
                                                                 class="btn btn-warning"><i class="fas fa-pen"></i></a>
-                                                            <form action="{{ route('delete.property', $d->id) }}"
+                                                            <form action="{{ route('bdelete.property', $d->id) }}"
                                                                 method="post">
                                                                 @csrf
                                                                 @method('DELETE')
