@@ -27,7 +27,7 @@
 
 
                         <div class="product__details__pic__slider">
-                            <img class="img-fluid" src="{{ asset('assets/frontend/images/bali.jpg') }}" alt="">
+                            <img class="img-fluid" src="{{ Storage::url('public/image/' . $property->gambar1) }}" alt="">
                         </div>
 
                     </div>
@@ -40,11 +40,18 @@
                         </div>
                         <p>{{ $property->alamat }}</p>
                         <div class="product__details__button">
-                            <div class="quantity">
+                            <div class="date">
+                                <div class="row">
                                 <span>Checkin:</span>
-                                <input class="form-control w-50 h-25" placeholder="Start" type="date" name="checkin">
+                                <div class="pro-qty">
+                                    <input class="form-control w-55 h-20" type="date" name="checkin">
+                                </div>
                                 <span>Checkout:</span>
-                                <input class="form-control w-50 h-25" placeholder="End" type="date" name="checkout">
+                                <div class="pro-qty">
+                                    <input class="form-control w-55 h-20" type="date" name="checkout">
+                                </div>
+                            </div>
+                                
                             </div>
                             <div class="quantity">
                                 <span>Tamu:</span>
@@ -53,7 +60,6 @@
                                 </div>
                             </div>
                             <ul>
-                                <li><a href="#"><span class="icon_heart_alt"></span></a></li>
                                 <li><a href="#"><span class="icon_adjust-horiz"></span></a></li>
                             </ul>
                             <div class="quantity">
@@ -266,13 +272,15 @@
                     @foreach ($property as $p)
                         <div class="col-md-4 col-sm-6">
                             <div class="single-package-item">
-                                <img src="{{ Storage::url('public/image/' . $p->gambar1) }}" alt="package-place">
+                                <img src="{{ Storage::url('public/image/' . $property->gambar1) }}" alt="package-place">
                                 <div class="single-package-item-txt">
                                     <h3>Jakarta <span
-                                            class="pull-right">{{ 'Rp. ' . number_format($p->harga, 0, '', '.') }}</span>
+                                            class="pull-right">{{ 'Rp. ' . number_format($property->harga, 0, '', '.') }}</span>
                                     </h3>
                                     <div class="packages-para">
-                                        <h4>Exclusive Studio Apartment at Woodland Park Residence By Travel-Go - Jakarta
+                                        <h4>Exclusive {{ $property->tipe_kamar }} {{ $property->m_property->tipe_property }} at
+                                            {{ $property->m_building->nm_building }} By
+                                            Travel-Go - Jakarta
                                         </h4>
 
                                     </div>
@@ -293,7 +301,7 @@
                     @endforeach
                     <!--/.col-->
 
-                    
+
 
                 </div>
                 <!--/.row-->

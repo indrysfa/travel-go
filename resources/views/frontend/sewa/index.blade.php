@@ -137,7 +137,7 @@
                                 </div>
                                 <div class="col-md-8">
                                     <div class="card-body">
-                                        <h4 class="card-title mb-0 mt-0"><a href="{{ route('sewa.index  ', $fsdp->id) }}">{{$fsdp->nama}}</a></h4>
+                                        <h4 class="card-title mb-0 mt-0"><a href="{{ route('sewa.index', $fsdp->id) }}">{{$fsdp->nama}}</a></h4>
                                         <i class="fa fa-building" aria-hidden="true"> {{$fsdp->tipe_property_id}}</i>
                                         <i class="fa fa-bed" aria-hidden="true">{{$fsdp->kasur}} </i>
                                         <i class="fa fa-bath" aria-hidden="true"> {{$fsdp->kamar_mandi}}</i>
