@@ -18,19 +18,9 @@ class SewaController extends Controller
     public function indexFrontendSewaDataProperty()
     {
         $frontendSewaDataProperty = Property::all();
-        return view('frontend.sewa.index', compact('frontendSewaDataProperty'));
-    }
-
-    public function indexFrontendKategoriFasilitas()
-    {
         $backendKategoriFasilitas = fasilitas::all();
-        return view('frontend.sewa.index', compact('backendKategoriFasilitas'));
-    }
-
-    public function indexFrontendKategoriBuilding()
-    {
-        $backendKategoriFasilitas = building::all();
-        return view('frontend.sewa.index', compact('backendKategoriBuilding'));
+        $backendKategoriBuilding = building::all();
+        return view('frontend.sewa.index', compact('frontendSewaDataProperty', 'backendKategoriFasilitas', 'backendKategoriBuilding'));
     }
 
     /**

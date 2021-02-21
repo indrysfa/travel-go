@@ -32,7 +32,7 @@ Route::group(['prefix' => '/', 'namespace' => 'Frontend'], function () {
     Route::get('/sewa-detail/{property}', 'HomeController@show')->name('sewa.index');
 
     //Hendy
-    Route::get('/sewa', 'HomeController@indexFrontendSewaDataProperty')->name('frontend.sewa.index');
+    Route::get('/sewa', 'SewaController@indexFrontendSewaDataProperty')->name('frontend.sewa.index');
     Route::get('/sewa-kategori-fasilitas', 'SewaController@indexFrontendKategoriFasilitas')->name('frontend.kategori-fasilitas.index');
     Route::get('/sewa-kategori-building', 'SewaController@indexFrontendKategoriBuilding')->name('frontend.kategori-building.index');
 
