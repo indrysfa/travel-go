@@ -63,11 +63,11 @@
                                                     <td>{{ $d->harga }}</td>
                                                     <td>
                                                         <div class="btn-group">
-                                                            <a href="{{ route('detail.property', $d->id) }}"
+                                                            <a href="{{ route('bdetail.property', $d->id) }}"
                                                                 class="btn btn-info"><i class="fas fa-eye"></i></a>
-                                                            <a href="{{ route('edit.property', $d->id) }}"
+                                                            <a href="{{ route('bedit.property', $d->id) }}"
                                                                 class="btn btn-warning"><i class="fas fa-pen"></i></a>
-                                                            <form action="{{ route('delete.property', $d->id) }}"
+                                                            <form action="{{ route('bdelete.property', $d->id) }}"
                                                                 method="post">
                                                                 @csrf
                                                                 @method('DELETE')
@@ -103,17 +103,18 @@
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <form action="{{ route('bform.tipe') }}" method="post">
+                                <form action="{{ route('badd.tipe') }}" method="post">
+                                    @csrf
                                     <div class="form-group">
                                         <label for="tipe_property">Tipe Property</label>
                                         <input type="text" class="form-control" id="tipe_property" name="tipe_property" value="{{ old('tipe_property') }}"
                                             placeholder="Enter Your Name">
                                     </div>
+                                    <button type="submit" class="btn btn-primary">Add Property</button>
                                 </form>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Add Property</button>
                             </div>
                         </div>
                     </div>

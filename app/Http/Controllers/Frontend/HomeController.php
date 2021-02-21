@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers\Frontend;
 
+use App\building;
+use App\fasilitas;
 use App\Http\Controllers\Controller;
+use App\Property;
+use App\TipeProperty;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -34,9 +38,14 @@ class HomeController extends Controller
      * @return \Illuminate\Http\Response
      */
     // public function store(Request $request)
-    public function store()
+    public function store(Property $property)
     {
-        return view('frontend.home.detailsewa');
+        // $data = TipeProperty::all();
+        // $building = building::all();
+        // $fasilitas = fasilitas::all();
+        // return view('frontend.home.detailsewa', compact('data', 'building', 'fasilitas'));
+
+        return view('frontend.home.detailsewa', compact('property'));
     }
 
     /**
@@ -45,9 +54,10 @@ class HomeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show()
+    public function show(Property $property)
     {
-        return view('frontend.home.showsewa');
+        
+        return view('frontend.home.detailsewa', compact('property'));
     }
 
     /**

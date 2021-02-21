@@ -57,8 +57,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <div class="dropdown-divider"></div>
                         <a href="#" class="dropdown-item">
                             <i class="fas fa-users mr-2"></i> Logout
-                        <div class="dropdown-divider"></div>
-                        <a href="#" class="dropdown-item dropdown-footer">Thank You</a>
+                            <div class="dropdown-divider"></div>
+                            <a href="#" class="dropdown-item dropdown-footer">Thank You</a>
                     </div>
                 </li>
                 <li class="nav-item">
@@ -107,7 +107,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="{{route('bhome.show')}}" class="nav-link">
+                                    <a href="{{ route('bhome.show') }}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Data Property</p>
                                     </a>
@@ -124,10 +124,22 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="{{route('backend.sewa.index')}} " class="nav-link">
+                                {{-- <li class="nav-item">
+                                    <a href="{{ route('backend.sewa-data-property.index') }} " class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Data</p>
+                                        <p>Data Sewa Property</p>
+                                    </a>
+                                </li> --}}
+                                <li class="nav-item">
+                                    <a href="{{ route('backend.kategori-fasilitas.index') }} " class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Data Sewa Fasilitas</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('backend.kategori-building.index') }} " class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Data Sewa Building</p>
                                     </a>
                                 </li>
                             </ul>
@@ -150,7 +162,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 </li>
                             </ul>
                         </li>
-                        
+
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->
@@ -200,7 +212,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 Anything you want
             </div>
             <!-- Default to the left -->
-            <strong>Copyright &copy; 2021 <a href="http://indrysfa.com/">travel-go</a>.</strong> All rights reserved.
+            <strong>Copyright &copy; 2021 <a href="#">travel-go</a>.</strong> All rights reserved.
         </footer>
     </div>
     <!-- ./wrapper -->
