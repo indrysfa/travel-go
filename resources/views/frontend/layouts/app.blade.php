@@ -169,7 +169,7 @@
                 </div>
                 <div class="copyright">
                     <div class="container">
-                        <p>Copyright 2021 All Right<a href="http://indrysfa.com/"></a></p>
+                        <p>Copyright 2021 All Right<a href="#"></a></p>
                     </div>
                 </div>
             </div>
@@ -178,17 +178,17 @@
     <!-- end footer -->
     <!-- Javascript files-->
     <script src="{{ asset('assets/eforlad/js/jquery.min.js') }}"></script>
-    {{-- <script src="{{ asset('assets/eforlad/js/popper.min.js') }}"></script> --}}
-    {{-- <script src="{{ asset('assets/eforlad/js/bootstrap.bundle.min.js') }}"></script>
-    --}}
+    <script src="{{ asset('assets/eforlad/js/popper.min.js') }}"></script>
+    <script src="{{ asset('assets/eforlad/js/bootstrap.bundle.min.js') }}"></script>
+   
     <script src="{{ asset('assets/eforlad/js/jquery-3.0.0.min.js') }}"></script>
     <script src="{{ asset('assets/eforlad/js/plugin.js') }}"></script>
     <!-- sidebar -->
     <script src="{{ asset('assets/eforlad/js/jquery.mCustomScrollbar.concat.min.js') }}"></script>
     <script src="{{ asset('assets/eforlad/js/custom.js') }}"></script>
     <!-- javascript -->
-    {{-- <script src="{{ asset('assets/eforlad/js/owl.carousel.js') }}"></script>
-    --}}
+    <script src="{{ asset('assets/eforlad/js/owl.carousel.js') }}"></script>
+    
 
     <!-- Ashion Js Plugins -->
     {{-- <script src="{{ asset('assets/ashion/ashion/js/jquery-3.3.1.min.js') }}"></script> --}}
