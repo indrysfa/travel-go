@@ -22,6 +22,7 @@ class CreateBookingsTable extends Migration
             $table->date('checkin');
             $table->date('checkout');
             $table->string('properti');
+            $table->char('promotion');
             $table->integer('tamu');
             $table->timestamps();
         });

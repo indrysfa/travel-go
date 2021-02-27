@@ -56,8 +56,14 @@ class HomeController extends Controller
      */
     public function show(Property $property)
     {
-        
-        return view('frontend.home.detailsewa', compact('property'));
+        $dataProperty = Property::latest()->paginate(3);
+        return view('frontend.home.detailsewa', compact('property','dataProperty'));
+
+    }
+
+    public function registration()
+    {
+        return view('auth.register');
     }
 
     /**

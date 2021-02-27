@@ -30,6 +30,7 @@ Route::group(['prefix' => '/', 'namespace' => 'Frontend'], function () {
     // Indry
     Route::get('/', 'HomeController@index')->name('home.index');
     Route::get('/sewa-detail/{property}', 'HomeController@show')->name('sewa.index');
+    Route::get('/registration', 'HomeController@registration')->name('form.regis');
 
     //Hendy
     Route::get('/sewa', 'SewaController@indexFrontendSewaDataProperty')->name('frontend.sewa.index');
@@ -91,3 +92,7 @@ Route::group(['prefix' => '/admin', 'namespace' => 'Backend'], function () {
     // Ika
 //     Route::get('/promotion', 'PromotionController@index')->name('backend.promotion.index');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
