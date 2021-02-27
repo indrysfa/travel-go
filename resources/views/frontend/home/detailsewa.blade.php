@@ -53,26 +53,34 @@
                         <div class="product__details__button">
                             <div class="date">
                                 <div class="row">
-                                <span>Checkin:</span>
-                                <div class="pro-qty">
-                                    <input class="form-control w-55 h-20" type="date" name="checkin">
+                                    <div class="col-sm-6">
+                                        <span>Checkin:</span>
+                                        <div class="pro-date">
+                                            <input class="form-control w-55 h-30" type="date" name="checkin">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <span>Checkout:</span>
+                                        <div class="pro-date">
+                                            <input class="form-control w-55 h-30" type="date" name="checkout">
+                                        </div>
+                                    </div>
                                 </div>
-                                <span>Checkout:</span>
-                                <div class="pro-qty">
-                                    <input class="form-control w-55 h-20" type="date" name="checkout">
-                                </div>
-                            </div>
-                                
+                                <br>
                             </div>
                             <div class="quantity">
                                 <span>Tamu:</span>
                                 <div class="pro-qty">
-                                    <input type="text" value="1">{{ $property->tambah_orang }}
+                                    <input type="text" value="0" id="quantity">
                                 </div>
                             </div>
-                            <ul>
-                                <li><a href="#"><span class="icon_adjust-horiz"></span></a></li>
-                            </ul>
+                            <div class="promotion" id="kode_promotion" style="display: none;">
+                                <span>Promotion:</span>
+                                <div class="row">
+                                    <input type="text" value="">
+                                </div>
+                            </div>
+                            <br>
                             <div class="quantity">
                                 <a href="#" class="cart-btn"><span class="icon_bag_alt"></span> Book Now</a>
                             </div>
@@ -280,17 +288,17 @@
                 </div>
                 <div class="row loc-carousel">
 
-                    @foreach ($property as $p)
+                    @foreach ($dataProperty as $p)
                         <div class="col-md-4 col-sm-6">
                             <div class="single-package-item">
-                                <img src="{{ Storage::url('public/image/' . $property->gambar1) }}" alt="package-place">
+                                <img src="{{ Storage::url('public/image/' . $p->gambar1) }}" alt="package-place">
                                 <div class="single-package-item-txt">
                                     <h3>Jakarta <span
-                                            class="pull-right">{{ 'Rp. ' . number_format($property->harga, 0, '', '.') }}</span>
+                                            class="pull-right">{{ 'Rp. ' . number_format($p->harga, 0, '', '.') }}</span>
                                     </h3>
                                     <div class="packages-para">
-                                        <h4>Exclusive {{ $property->tipe_kamar }} {{ $property->m_property->tipe_property }} at
-                                            {{ $property->m_building->nm_building }} By
+                                        <h4>Exclusive {{ $p->tipe_kamar }} {{ $p->m_property->tipe_property }} at
+                                            {{ $p->m_building->nm_building }} By
                                             Travel-Go - Jakarta
                                         </h4>
 
@@ -320,4 +328,16 @@
         </div>
     </section>
     <!-- Product Details Section End -->
+@endsection
+
+@section('js')
+    <script>
+        var qty = document.getElementById('quantity');
+        var promo = document.getElementById('kode_promotion');
+
+        qty.addEventListener('keypress', function() {
+            promo.style.display = 'block'
+        })
+
+    </script>
 @endsection

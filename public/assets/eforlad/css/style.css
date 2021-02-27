@@ -1732,6 +1732,10 @@ input[type="radio"] .styled:checked+label::after {
     color: #fff;
 }
 
+#amazing-room{
+    margin-top: 250px;
+}
+
 .main-form h3 {
     float: left;
     margin-top: -82px;

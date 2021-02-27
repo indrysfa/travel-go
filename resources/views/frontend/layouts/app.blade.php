@@ -14,7 +14,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- bootstrap css -->
-    
+
     <link rel="stylesheet" href="{{ asset('assets/eforlad/css/bootstrap.min.css') }}">
     <!-- style css -->
     <link rel="stylesheet" href="{{ asset('assets/eforlad/css/style.css') }}">
@@ -27,9 +27,7 @@
     <!-- Tweaks for older IEs-->
     <!-- owl stylesheets -->
     <link rel="stylesheet" href="{{ asset('assets/eforlad/css/owl.carousel.min.css') }}">
-    {{--
-    <link rel="stylesheet" href="{{ asset('assets/eforlad/css/owl.theme.default.min.css') }}">
-    --}}
+    {{-- <link rel="stylesheet" href="{{ asset('assets/eforlad/css/owl.theme.default.min.css') }}"> --}}
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
@@ -40,9 +38,9 @@
     <!--style.css-->
     {{-- <link rel="stylesheet" href="{{ asset('assets/tournest/assets/css/style.css') }}" /> --}}
     {{-- Custom CSS --}}
-    <link rel="stylesheet" href="{{ asset('frontend/css/indry.css') }}">
+    {{-- <link rel="stylesheet" href="{{ asset('frontend/css/indry.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/css/ika.css') }}">
-    <link rel="stylesheet" href="{{ asset('frontend/css/hendy.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/css/hendy.css') }}"> --}}
 
     <!-- Ashion Css Styles -->
     <link rel="stylesheet" href="{{ asset('assets/ashion/ashion/css/font-awesome.min.css') }}" type="text/css">
@@ -71,12 +69,13 @@
                         <div class="col-md-12">
                             <div class="header_information">
                                 <ul>
-                                    <li><img src="{{ asset('assets/eforlad/images/2.png') }}" alt="header-contact" /> +71 5678954378
+                                    <li><img src="{{ asset('assets/eforlad/images/2.png') }}" alt="header-contact" />
+                                        +71 5678954378
                                     </li>
                                     <li><img src="{{ asset('assets/eforlad/images/3.png') }}" alt="header-contact" />
                                         admin@travel-go.com</li>
                                     <li> <button><a href="#">Login</a></button> </li>
-                                    <li> <button><a href="#">Register</a></button> </li>
+                                    <li> <a href="{{ route('form.regis') }}">Register</a> </li>
                                 </ul>
                             </div>
                         </div>
@@ -89,7 +88,8 @@
                         <div class="full">
                             <div class="center-desk">
                                 <div class="logo"> <a href="{{ route('home.index') }}"><img
-                                            src="{{ asset('assets/frontend/images/logo-bg.png') }}" alt="#"></a> </div>
+                                            src="{{ asset('assets/frontend/images/logo-bg.png') }}" alt="#"></a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -99,7 +99,8 @@
                                 <nav class="main-menu">
                                     <ul class="menu-area-main">
                                         <li class=""> <a href="{{ route('home.index') }}">Home</a> </li>
-                                        <li class=""> <a href="{{ route('frontend.sewa.index') }}#sewa-search">Sewa</a> </li>
+                                        <li class=""> <a
+                                                href="{{ route('frontend.sewa.index') }}#sewa-search">Sewa</a> </li>
                                         <li><a href="#travel">Promotion</a></li>
                                     </ul>
                                 </nav>
@@ -180,7 +181,10 @@
     <script src="{{ asset('assets/eforlad/js/jquery.min.js') }}"></script>
     <script src="{{ asset('assets/eforlad/js/popper.min.js') }}"></script>
     <script src="{{ asset('assets/eforlad/js/bootstrap.bundle.min.js') }}"></script>
+<<<<<<< HEAD
    
+=======
+>>>>>>> indry-frontend
     <script src="{{ asset('assets/eforlad/js/jquery-3.0.0.min.js') }}"></script>
     <script src="{{ asset('assets/eforlad/js/plugin.js') }}"></script>
     <!-- sidebar -->
@@ -188,7 +192,10 @@
     <script src="{{ asset('assets/eforlad/js/custom.js') }}"></script>
     <!-- javascript -->
     <script src="{{ asset('assets/eforlad/js/owl.carousel.js') }}"></script>
+<<<<<<< HEAD
     
+=======
+>>>>>>> indry-frontend
 
     <!-- Ashion Js Plugins -->
     {{-- <script src="{{ asset('assets/ashion/ashion/js/jquery-3.3.1.min.js') }}"></script> --}}
@@ -228,6 +235,8 @@
         })
 
     </script>
+    @yield('js')
+
 
 </body>
 
