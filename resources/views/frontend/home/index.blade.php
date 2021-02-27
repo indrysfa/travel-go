@@ -5,7 +5,7 @@
         <div class="banner-main">
             {{-- <img class="img-fluid" src="{{ asset('assets/eforlad/images/banner.jpg') }}"
                 alt="banner" /> --}}
-            <img src="{{ asset('assets/frontend/images/bali.jpg') }}" alt="banner" />
+            <img src="{{ asset('assets/frontend/images/bell.jpg') }}" alt="banner" />
             <div class="container">
                 <div class="text-bg" id="sewa-search">
                     <h1>Indonesian<br><strong class="white">Amazing Room</strong></h1>

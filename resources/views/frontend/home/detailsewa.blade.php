@@ -9,7 +9,7 @@
                 <div class="col-lg-12">
                     <div class="breadcrumb__links">
                         <a href="{{ route('home.index') }}"><i class="fa fa-home"></i> Home</a>
-                        <a href="{{ route('sewa.index') }}">Property Sewa </a>
+                        <a href="{{ route('sewa.index', $property->id) }}">Property Sewa </a>
                         <span>@yield('subtitle')</span>
                     </div>
                 </div>
@@ -27,7 +27,7 @@
 
 
                         <div class="product__details__pic__slider">
-                            <img class="img-fluid" src="{{ asset('assets/frontend/images/bali.jpg') }}" alt="">
+                            <img class="img-fluid" src="{{ Storage::url('public/image/' . $property->gambar1) }}" alt="">
                         </div>
 
                     </div>
@@ -35,7 +35,8 @@
 
                 <div class="col-lg-6">
                     <div class="product__details__text">
-                        <h3>{{ $property->nama }}</span></h3>
+<<<<<<< HEAD
+                        <h3></span></h3>
                         <div class="rating">
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
@@ -43,25 +44,33 @@
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
                             <span>( 138 reviews )</span>
+=======
+                        <h3>{{ $property->nama }}</span></h3>
+                        <div class="product__details__price">{{ 'Rp. ' . number_format($property->harga, 0, '', '.') }}
+>>>>>>> 9171a87a3ab15223f436ecaa27287be7f0b1dc25
                         </div>
-                        <div class="product__details__price">IDR 765.000 <span>IDR 1.765.000</span></div>
-                        <p>Unit ini menawarkan hunian luas dengan 3 kamar tidur dan 2 kamar mandi di Apartemen Ciputra
-                            International. Cocok untuk Anda huni bersama keluarga Anda.</p>
+                        <p>{{ $property->alamat }}</p>
                         <div class="product__details__button">
-                            <div class="quantity">
+                            <div class="date">
+                                <div class="row">
                                 <span>Checkin:</span>
-                                <input class="form-control w-50 h-25" placeholder="Start" type="date" name="Start">
+                                <div class="pro-qty">
+                                    <input class="form-control w-55 h-20" type="date" name="checkin">
+                                </div>
                                 <span>Checkout:</span>
-                                <input class="form-control w-50 h-25" placeholder="End" type="date" name="End">
+                                <div class="pro-qty">
+                                    <input class="form-control w-55 h-20" type="date" name="checkout">
+                                </div>
+                            </div>
+                                
                             </div>
                             <div class="quantity">
                                 <span>Tamu:</span>
                                 <div class="pro-qty">
-                                    <input type="text" value="1">
+                                    <input type="text" value="1">{{ $property->tambah_orang }}
                                 </div>
                             </div>
                             <ul>
-                                <li><a href="#"><span class="icon_heart_alt"></span></a></li>
                                 <li><a href="#"><span class="icon_adjust-horiz"></span></a></li>
                             </ul>
                             <div class="quantity">
@@ -81,21 +90,18 @@
                             <li class="nav-item">
                                 <a class="nav-link" data-toggle="tab" href="#tabs-2" role="tab">Specification</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-toggle="tab" href="#tabs-3" role="tab">Reviews ( 2 )</a>
-                            </li>
                         </ul>
                         <div class="tab-content">
                             <div class="tab-pane active" id="tabs-1" role="tabpanel">
-                                <h6>EXQUISITE 3BR RESIDENCE AT CIPUTRA INTERNATIONAL APARTMENT BY TRAVELIO - JAKARTA</h6>
+                                <h6>{{ $property->nama }} - {{ $property->kota }}</h6>
                                 <p>Tipe Properti
-                                    Apartemen
+                                    {{ $property->m_property->tipe_property }}
                                     Gedung
-                                    Ciputra International
+                                    {{ $property->m_building->nm_building }}
                                     Tower
-                                    AMSTERDAM
+                                    {{ $property->tower }}
                                     Lantai
-                                    38,38
+                                    {{ $property->lantai }}
                                     Check-in
                                     14.00 - 24.00
                                     Check-out
@@ -104,7 +110,8 @@
                                     Unit dan linen hanya akan dibersihkan saat check-out. Permintaan khusus selama masa
                                     tinggal Anda tersedia dengan biaya tambahan.
                                     Orang Tambahan
-                                    Tambahan orang di luar hunian maksimal akan dikenakan biaya 50.000 / orang. Harap
+                                    Tambahan orang di luar hunian maksimal akan dikenakan biaya
+                                    5{{ $property->tambah_orang }} / orang. Harap
                                     dicatat bahwa tempat tidur tambahan tidak akan tersedia dalam skenario ini.
                                     Lainnya
                                     Biaya parkir merupakan tanggung jawab tamu, prediksi biaya mulai dari 5.000 / jam.</p>
@@ -114,19 +121,19 @@
                                 <div class="row">
                                     <div class="col-sm-3">
                                         <span>Ukuran: </span>
-                                        <p>121</p>
+                                        <p>{{ $property->ukuran }}</p>
                                     </div>
                                     <div class="col-sm-3">
                                         <span>Kamar Mandi: </span>
-                                        <p>1</p>
+                                        <p>{{ $property->kamar_mandi }}</p>
                                     </div>
                                     <div class="col-sm-3">
                                         <span>Tipe Kamar: </span>
-                                        <p>Seluruh Rumah / Apartemen</p>
+                                        <p>{{ $property->tipe_kamar }}</p>
                                     </div>
                                     <div class="col-sm-3">
                                         <span>Kasur: </span>
-                                        <p>3 Queen (160x200)</p>
+                                        <p>{{ $property->kasur }}</p>
                                     </div>
                                 </div>
                                 <hr>
@@ -134,39 +141,39 @@
                                 <div class="row">
                                     <div class="col-sm-3">
                                         <span>Tipe Properti: </span>
-                                        <p>Apartemen</p>
+                                        <p>{{ $property->tipe_property_id }}</p>
                                     </div>
                                     <div class="col-sm-3">
                                         <span>Gedung: </span>
-                                        <p>Ciputra International</p>
+                                        <p>{{ $property->nm_building_id }}</p>
                                     </div>
                                     <div class="col-sm-3">
                                         <span>Tower: </span>
-                                        <p>AMSTERDAM</p>
+                                        <p>{{ $property->tower }}</p>
                                     </div>
                                     <div class="col-sm-3">
                                         <span>Lantai: </span>
-                                        <p>47</p>
+                                        <p>{{ $property->lantai }}</p>
                                     </div>
                                 </div>
                                 <br>
                                 <div class="row">
                                     <div class="col-sm-3">
                                         <span>Check-in: </span>
-                                        <p>Apartemen</p>
+                                        <p>13.00</p>
                                     </div>
                                     <div class="col-sm-3">
                                         <span>Check-out: </span>
-                                        <p>Ciputra International</p>
+                                        <p>12.00</p>
                                     </div>
                                     <div class="col-sm-3">
                                         <span>Biaya Kebersihan: </span>
-                                        <p>Unit dan linen hanya akan dibersihkan saat check-out. Permintaan khusus selama
-                                            masa tinggal Anda tersedia dengan biaya tambahan.</p>
+                                        <p>{{ number_format($property->biaya_kebersihan, 0, '', '.') }}</p>
                                     </div>
                                     <div class="col-sm-3">
                                         <span>Orang Tambahan: </span>
-                                        <p>Tambahan orang di luar hunian maksimal akan dikenakan biaya 50.000 / orang. Harap
+                                        <p>Tambahan orang di luar hunian maksimal akan dikenakan biaya
+                                            {{ $property->tambah_orang }} / orang. Harap
                                             dicatat bahwa tempat tidur tambahan tidak akan tersedia dalam skenario ini.</p>
                                     </div>
                                     <div class="col-sm-3">
@@ -179,12 +186,8 @@
                                 <div class="row">
                                     <div class="col-sm-3">
                                         <span>Fasilitas Gedung: </span>
-                                        <p>Swimming Pool</p>
-                                        <p>Access Card</p>
-                                        <p>Fitness Center</p>
-                                        <p>CCTV In Pubpc Area</p>
-                                        <p>24-Hour Security</p>
-                                        <p>Elevator</p>
+
+                                        {{ $property->m_fasilitas->nm_fasilitas }}
                                     </div>
                                 </div>
                                 <hr>
@@ -198,7 +201,8 @@
                                     <i class="fa fa-star"></i>
                                     <span> Danang</span>
                                 </div>
-                                <p>Apartemen nya bagus worthed dengan harga yang saya bayarkan cuma saya yang tidak di sediakan tisu di dalam apartemen tersebut..</p>
+                                <p>Apartemen nya bagus worthed dengan harga yang saya bayarkan cuma saya yang tidak di
+                                    sediakan tisu di dalam apartemen tersebut..</p>
                                 <hr>
                                 <div class="rating">
                                     <i class="fa fa-star"></i>
@@ -208,7 +212,8 @@
                                     <i class="fa fa-star"></i>
                                     <span> Lisa</span>
                                 </div>
-                                <p>Apartemen nya bagus worthed dengan harga yang saya bayarkan cuma saya yang tidak di sediakan tisu di dalam apartemen tersebut..</p>
+                                <p>Apartemen nya bagus worthed dengan harga yang saya bayarkan cuma saya yang tidak di
+                                    sediakan tisu di dalam apartemen tersebut..</p>
                                 <hr>
                             </div>
                         </div>
@@ -275,80 +280,39 @@
                 </div>
                 <div class="row loc-carousel">
 
-                    <div class="col-md-4 col-sm-6">
-                        <div class="single-package-item">
-                            <img src="{{ asset('assets/tournest/assets/images/packages/p1.jpg') }}" alt="package-place">
-                            <div class="single-package-item-txt">
-                                <h3>Jakarta <span class="pull-right">$499</span></h3>
-                                <div class="packages-para">
-                                    <h4>Exclusive Studio Apartment at Woodland Park Residence By Travel-Go - Jakarta</h4>
+                    @foreach ($property as $p)
+                        <div class="col-md-4 col-sm-6">
+                            <div class="single-package-item">
+                                <img src="{{ Storage::url('public/image/' . $property->gambar1) }}" alt="package-place">
+                                <div class="single-package-item-txt">
+                                    <h3>Jakarta <span
+                                            class="pull-right">{{ 'Rp. ' . number_format($property->harga, 0, '', '.') }}</span>
+                                    </h3>
+                                    <div class="packages-para">
+                                        <h4>Exclusive {{ $property->tipe_kamar }} {{ $property->m_property->tipe_property }} at
+                                            {{ $property->m_building->nm_building }} By
+                                            Travel-Go - Jakarta
+                                        </h4>
 
-                                </div>
-                                <!--/.packages-para-->
+                                    </div>
+                                    <!--/.packages-para-->
 
-                                <div class="about-btn">
-                                    <button class="about-view packages-btn">
-                                        book now
-                                    </button>
+                                    <div class="about-btn">
+                                        <button class="about-view packages-btn">
+                                            book now
+                                        </button>
+                                    </div>
+                                    <!--/.about-btn-->
                                 </div>
-                                <!--/.about-btn-->
+                                <!--/.single-package-item-txt-->
                             </div>
-                            <!--/.single-package-item-txt-->
-                        </div>
-                        <!--/.single-package-item-->
+                            <!--/.single-package-item-->
 
-                    </div>
+                        </div>
+                    @endforeach
                     <!--/.col-->
 
-                    <div class="col-md-4 col-sm-6">
-                        <div class="single-package-item">
-                            <img src="{{ asset('assets/tournest/assets/images/packages/p1.jpg') }}" alt="package-place">
-                            <div class="single-package-item-txt">
-                                <h3>Jakarta <span class="pull-right">$499</span></h3>
-                                <div class="packages-para">
-                                    <h4>Exclusive Studio Apartment at Woodland Park Residence By Travel-Go - Jakarta</h4>
 
-                                </div>
-                                <!--/.packages-para-->
-
-                                <div class="about-btn">
-                                    <button class="about-view packages-btn">
-                                        book now
-                                    </button>
-                                </div>
-                                <!--/.about-btn-->
-                            </div>
-                            <!--/.single-package-item-txt-->
-                        </div>
-                        <!--/.single-package-item-->
-
-                    </div>
-                    <!--/.col-->
-
-                    <div class="col-md-4 col-sm-6">
-                        <div class="single-package-item">
-                            <img src="{{ asset('assets/tournest/assets/images/packages/p1.jpg') }}" alt="package-place">
-                            <div class="single-package-item-txt">
-                                <h3>Jakarta <span class="pull-right">$499</span></h3>
-                                <div class="packages-para">
-                                    <h4>Exclusive Studio Apartment at Woodland Park Residence By Travel-Go - Jakarta</h4>
-
-                                </div>
-                                <!--/.packages-para-->
-
-                                <div class="about-btn">
-                                    <button class="about-view packages-btn">
-                                        book now
-                                    </button>
-                                </div>
-                                <!--/.about-btn-->
-                            </div>
-                            <!--/.single-package-item-txt-->
-                        </div>
-                        <!--/.single-package-item-->
-
-                    </div>
-                    <!--/.col-->
 
                 </div>
                 <!--/.row-->
