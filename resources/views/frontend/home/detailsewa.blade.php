@@ -35,19 +35,8 @@
 
                 <div class="col-lg-6">
                     <div class="product__details__text">
-<<<<<<< HEAD
-                        <h3></span></h3>
-                        <div class="rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <span>( 138 reviews )</span>
-=======
                         <h3>{{ $property->nama }}</span></h3>
                         <div class="product__details__price">{{ 'Rp. ' . number_format($property->harga, 0, '', '.') }}
->>>>>>> 9171a87a3ab15223f436ecaa27287be7f0b1dc25
                         </div>
                         <p>{{ $property->alamat }}</p>
                         <div class="product__details__button">
