@@ -36,7 +36,8 @@ Route::group(['prefix' => '/', 'namespace' => 'Frontend'], function () {
 
     // Ika
     Route::get('/promotion', 'PromotionController@promotion')->name('frontend.promotion.index');
-    Route::get('/booking', 'PromotionController@promotion')->name('frontend.promotion.detail');
+
+    // Route::get('/booking', 'PromotionController@promotion')->name('frontend.promotion.detail');
 });
 
 
@@ -71,6 +72,24 @@ Route::group(['prefix' => '/admin', 'namespace' => 'Backend'], function () {
 
     
     // Ika
-    Route::get('/promotion', 'PromotionController@index')->name('backend.promotion.index');
-    Route::get('/showdata', 'PromotionController@index')->name('backend.promotion.showdata');
+    Route::get('/data','backend/PromotionController@data')->name('backend.promotion.data');
+
+    Route::get('/datapromotion','backend/PromotionController@datapromotion')->name('showpromotionn');
+    
+    Route::get('/create','backend/PromotionController@create')->name('create');
+
+    Route::post('/create','backend/PromotionController@create')->name('create');
+
+    Route::post('/inputkode','backend/PromotionController@inputkode')->name('pembelian');
+
+    Route::delete('/delete/{kodepromo}','backend/PromotionController@delete')->name('delete');
+
+    route::get('/edit/{updatekode}','backend/PromotionController@edit')->name('promotion.edit');
+
+    route::put('/editkode/{updatekode}','backend/PromotionController@update')->name('updatekode');
+
+
+    
+
+ 
 });

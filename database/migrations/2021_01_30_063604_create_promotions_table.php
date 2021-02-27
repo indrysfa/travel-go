@@ -17,7 +17,7 @@ class CreatePromotionsTable extends Migration
             $table->id();
             $table->string('nama');
             $table->integer('jumlah');
-            $table->integer('kode kupon');
+            $table->integer('kode_kupon');
             $table->timestamps();
         });
     }
