@@ -3,6 +3,7 @@
 @section('subtitle', 'Sewa Property')
 
 @section('content')
+
     <!-- Page Preloder -->
     <div id="preloder">
         <div class="loader"></div>
@@ -131,45 +132,43 @@
                     </div>
                 </div>
                 <div class="col-lg-9 col-md-9">
-
                     <div class="row">
-                        <div id="live-search">
 
-                            @foreach ($frontendSewaDataProperty as $fsdp)
-                                <div class="card mb-9 mb-3" style="max-width: 940px;">
-                                    <div class="row no-gutters">
-                                        <div class="col-md-4">
-                                            <img src="{{ Storage::url('image/' . $fsdp->gambar1) }}"
-                                                class="card-img img-fluid" alt="produk">
-                                        </div>
-                                        <div class="col-md-8">
-                                            <div class="card-body">
-                                                <h4 class="card-title mb-0 mt-0"><a
-                                                        href="{{ route('sewa.index', $fsdp->id) }}">{{ $fsdp->nama }}</a>
-                                                </h4>
-                                                <i class="fa fa-building" aria-hidden="true">
-                                                    {{ $fsdp->tipe_property_id }}</i>
-                                                <i class="fa fa-bed" aria-hidden="true">{{ $fsdp->kasur }} </i>
-                                                <i class="fa fa-bath" aria-hidden="true"> {{ $fsdp->kamar_mandi }}</i>
-                                                <p class="card-text"><small class="text-muted">{{ $fsdp->alamat }},
-                                                        {{ $fsdp->kota }}</small>
-                                                </p>
-                                                <p>{{ $fsdp->jml_unit }} unit(s) available</p>
-                                                <h1>IDR {{ $fsdp->harga }}</h1>
-                                            </div>
+                        @forelse ($frontendSewaDataProperty as $fsdp)
+                            <div class="card mb-9 mb-3" style="max-width: 940px;">
+                                <div class="row no-gutters">
+                                    <div class="col-md-4">
+                                        <img src="{{ Storage::url('image/' . $fsdp->gambar1) }}"
+                                            class="card-img img-fluid" alt="produk">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body">
+                                            <h4 class="card-title mb-0 mt-0"><a
+                                                    href="{{ route('sewa.index', $fsdp->id) }}">{{ $fsdp->nama }}</a>
+                                            </h4>
+                                            <i class="fa fa-building" aria-hidden="true">
+                                                {{ $fsdp->tipe_property_id }}</i>
+                                            <i class="fa fa-bed" aria-hidden="true">{{ $fsdp->kasur }} </i>
+                                            <i class="fa fa-bath" aria-hidden="true"> {{ $fsdp->kamar_mandi }}</i>
+                                            <p class="card-text"><small class="text-muted">{{ $fsdp->alamat }},
+                                                    {{ $fsdp->kota }}</small>
+                                            </p>
+                                            <p>{{ $fsdp->jml_unit }} unit(s) available</p>
+                                            <h1>IDR {{ $fsdp->harga }}</h1>
                                         </div>
                                     </div>
                                 </div>
-                            @endforeach
+                            </div>
+                            @empty
+                            <p colspan="8" class="text-center">Maaf, Property Tidak Terdaftar...</p>
+                        @endforelse
 
-
-                            <div class="col-lg-12 text-center">
-                                <div class="pagination__option">
-                                    <a href="#">1</a>
-                                    <a href="#">2</a>
-                                    <a href="#">3</a>
-                                    <a href="#"><i class="fa fa-angle-right"></i></a>
-                                </div>
+                        <div class="col-lg-12 text-center">
+                            <div class="pagination__option">
+                                <a href="#">1</a>
+                                <a href="#">2</a>
+                                <a href="#">3</a>
+                                <a href="#"><i class="fa fa-angle-right"></i></a>
                             </div>
                         </div>
                     </div>

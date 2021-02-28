@@ -16,9 +16,26 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+
+    public function index(Request $request)
     {
-        return view('frontend.home.index');
+        $property = Property::all();
+        return view('frontend.home.index', compact('property'));
+    }
+
+    public function frontendSearch(Request $request)
+    {
+        $keyword = $request->get('keyword');
+
+        $frontendSewaDataProperty = Property::all();
+        $frontendKategoriFasilitas = fasilitas::all();
+        $frontendKategoriBuilding = building::all();
+
+        if ($keyword) {
+            $frontendSewaDataProperty = Property::where("alamat", "LIKE", "%$keyword%")->get();
+        }
+
+        return view('frontend.sewa.caridata', compact('frontendSewaDataProperty','frontendKategoriFasilitas', 'frontendKategoriBuilding'));
     }
 
     /**
@@ -57,8 +74,7 @@ class HomeController extends Controller
     public function show(Property $property)
     {
         $dataProperty = Property::latest()->paginate(3);
-        return view('frontend.home.detailsewa', compact('property','dataProperty'));
-
+        return view('frontend.home.detailsewa', compact('property', 'dataProperty'));
     }
 
     public function registration()

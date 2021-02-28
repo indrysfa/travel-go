@@ -34,6 +34,7 @@ Route::group(['prefix' => '/', 'namespace' => 'Frontend'], function () {
 
     //Hendy
     Route::get('/sewa', 'SewaController@indexFrontendSewaDataProperty')->name('frontend.sewa.index');
+    Route::get('/cari-property', 'HomeController@frontendSearch')->name('search');
 
     // Ika
     Route::get('/promotion', 'PromotionController@promotion')->name('frontend.promotion.index');
