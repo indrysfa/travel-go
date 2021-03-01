@@ -248,7 +248,7 @@
 
     </script>
     @yield('js')
-    @yield('livejs')
+
 
 
 </body>
