@@ -24,6 +24,7 @@ class CreateBookingsTable extends Migration
             $table->string('properti');
             $table->char('promotion');
             $table->integer('tamu');
+            $table->integer('harga');
             $table->timestamps();
         });
     }
