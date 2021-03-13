@@ -102,14 +102,14 @@
                                     Check-in
                                     14.00 - 24.00
                                     Check-out
-                                    12.00
+                                    12.00. 
                                     Biaya Kebersihan
                                     Unit dan linen hanya akan dibersihkan saat check-out. Permintaan khusus selama masa
                                     tinggal Anda tersedia dengan biaya tambahan.
                                     Orang Tambahan
                                     Tambahan orang di luar hunian maksimal akan dikenakan biaya
                                     5{{ $property->tambah_orang }} / orang. Harap
-                                    dicatat bahwa tempat tidur tambahan tidak akan tersedia dalam skenario ini.
+                                    di catat bahwa tempat tidur tambahan tidak akan tersedia dalam skenario ini.
                                     Lainnya
                                     Biaya parkir merupakan tanggung jawab tamu, prediksi biaya mulai dari 5.000 / jam.</p>
                             </div>

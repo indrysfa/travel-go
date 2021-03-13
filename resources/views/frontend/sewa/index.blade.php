@@ -29,11 +29,11 @@
             <div class="row">
                 <div class="col-lg-3 col-md-3">
                     <div class="col6">
-                        <form action="{{route('search') }}" class="form-inline pb-3" method="GET">
+                        <form action="{{ route('search') }}" class="form-inline pb-3" method="GET">
                             <div class="input-group input-group-sm">
-                            <input type="text" value="{{ Request::get('keyword') }}" name="keyword"
-                                class="typehead form-control" aria-label="Search" placeholder="Cari Lokasi Kamu..."
-                                autofocus autocomplete="off">
+                                <input type="text" value="{{ Request::get('keyword') }}" name="keyword"
+                                    class="typehead form-control" aria-label="Search" placeholder="Cari Lokasi Kamu..."
+                                    autofocus autocomplete="off">
                             </div>
                         </form>
                     </div>
@@ -45,14 +45,18 @@
                                 <h4>by price</h4>
                             </div>
                             <div class="filter-range-wrap">
-                                <div class="price-range ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content"
-                                    data-min="33" data-max="99"></div>
-                                <div class="range-slider">
-                                    <div class="price-input">
-                                        <p>Price:</p>
-                                        <input type="text" id="minamount">
-                                        <input type="text" id="maxamount">
-                                    </div>
+                                <div class="form-price-range-filter price-range ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content"
+                                    data-min="" data-max="">
+                                    <fo rm action="" method="POST">
+                                        <div class="range-slider slider-range">
+                                            <div class="price-input">
+                                                <p>Price:</p>
+                                                <label for="amount"></label>
+                                                <input type="text" id="amount" name="min_price">
+                                                <input type="text" id="max" name="max_price">
+                                            </div>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                             <a href="#">Filter</a>

@@ -32,11 +32,15 @@ class HomeController extends Controller
         $frontendKategoriBuilding = building::all();
 
         if ($keyword) {
-            $frontendSewaDataProperty = Property::where("alamat", "LIKE", "%$keyword%")->get();
+            $frontendSewaDataProperty = Property::where("nama", "LIKE", "%$keyword%")
+                ->orWhere("alamat", "LIKE", "%$keyword%")
+                ->orWhere("kota", "LIKE", "%$keyword%")->get();
         }
 
-        return view('frontend.sewa.caridata', compact('frontendSewaDataProperty','frontendKategoriFasilitas', 'frontendKategoriBuilding'));
+        return view('frontend.sewa.caridata', compact('frontendSewaDataProperty', 'frontendKategoriFasilitas', 'frontendKategoriBuilding'));
     }
+
+
 
     /**
      * Show the form for creating a new resource.
