@@ -80,6 +80,56 @@
 
                 <div class="col-lg-12">
                     <div class="product__details__tab">
+                        <!-- Instagram Begin - Gambar Detail -->
+                        <div class="instagram mb-5">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-lg-2 col-md-4 col-sm-4 p-0">
+                                        <div class="instagram__item set-bg" data-setbg="{{ Storage::url('public/image/' . $property->gambar2) }}">
+                                            <div class="instagram__text">
+                                                <img src="{{ Storage::url('public/image/' . $property->gambar2) }}" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-2 col-md-4 col-sm-4 p-0">
+                                        <div class="instagram__item set-bg" data-setbg="{{ Storage::url('public/image/' . $property->gambar3) }}">
+                                            <div class="instagram__text">
+                                                <img src="{{ Storage::url('public/image/' . $property->gambar3) }}" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-2 col-md-4 col-sm-4 p-0">
+                                        <div class="instagram__item set-bg" data-setbg="{{ Storage::url('public/image/' . $property->gambar4) }}">
+                                            <div class="instagram__text">
+                                                <img src="{{ Storage::url('public/image/' . $property->gambar4) }}" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-2 col-md-4 col-sm-4 p-0">
+                                        <div class="instagram__item set-bg" data-setbg="{{ Storage::url('public/image/' . $property->gambar5) }}">
+                                            <div class="instagram__text">
+                                                <img src="{{ Storage::url('public/image/' . $property->gambar5) }}" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-2 col-md-4 col-sm-4 p-0">
+                                        <div class="instagram__item set-bg" data-setbg="{{ Storage::url('public/image/' . $property->gambar6) }}">
+                                            <div class="instagram__text">
+                                                <img src="{{ Storage::url('public/image/' . $property->gambar6) }}" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-2 col-md-4 col-sm-4 p-0">
+                                        <div class="instagram__item set-bg" data-setbg="{{ Storage::url('public/image/' . $property->gambar7) }}">
+                                            <div class="instagram__text">
+                                                <img src="{{ Storage::url('public/image/' . $property->gambar7) }}" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Instagram End - Gambar Detail -->
                         <ul class="nav nav-tabs" role="tablist">
                             <li class="nav-item">
                                 <a class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab">Description</a>
@@ -189,85 +239,10 @@
                                 </div>
                                 <hr>
                             </div>
-                            <div class="tab-pane" id="tabs-3" role="tabpanel">
-                                <div class="rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <span> Danang</span>
-                                </div>
-                                <p>Apartemen nya bagus worthed dengan harga yang saya bayarkan cuma saya yang tidak di
-                                    sediakan tisu di dalam apartemen tersebut..</p>
-                                <hr>
-                                <div class="rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <span> Lisa</span>
-                                </div>
-                                <p>Apartemen nya bagus worthed dengan harga yang saya bayarkan cuma saya yang tidak di
-                                    sediakan tisu di dalam apartemen tersebut..</p>
-                                <hr>
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <!-- Instagram Begin -->
-            <div class="instagram mb-5">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-lg-2 col-md-4 col-sm-4 p-0">
-                            <div class="instagram__item set-bg" data-setbg="img/instagram/insta-1.jpg">
-                                <div class="instagram__text">
-                                    <img src="{{ asset('assets/frontend/images/bali.jpg') }}" alt="">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-4 col-sm-4 p-0">
-                            <div class="instagram__item set-bg" data-setbg="img/instagram/insta-2.jpg">
-                                <div class="instagram__text">
-                                    <img src="{{ asset('assets/frontend/images/bali.jpg') }}" alt="">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-4 col-sm-4 p-0">
-                            <div class="instagram__item set-bg" data-setbg="img/instagram/insta-3.jpg">
-                                <div class="instagram__text">
-                                    <img src="{{ asset('assets/frontend/images/bali.jpg') }}" alt="">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-4 col-sm-4 p-0">
-                            <div class="instagram__item set-bg" data-setbg="img/instagram/insta-4.jpg">
-                                <div class="instagram__text">
-                                    <img src="{{ asset('assets/frontend/images/bali.jpg') }}" alt="">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-4 col-sm-4 p-0">
-                            <div class="instagram__item set-bg" data-setbg="img/instagram/insta-5.jpg">
-                                <div class="instagram__text">
-                                    <img src="{{ asset('assets/frontend/images/bali.jpg') }}" alt="">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-4 col-sm-4 p-0">
-                            <div class="instagram__item set-bg" data-setbg="img/instagram/insta-6.jpg">
-                                <div class="instagram__text">
-                                    <img src="{{ asset('assets/frontend/images/bali.jpg') }}" alt="">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Instagram End -->
 
             <div class="row">
                 <div class="col-lg-12 text-center">
