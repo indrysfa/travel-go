@@ -12,9 +12,10 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function index()
+    public function index(Property $property)
     {
-        return view('frontend.home.index');
+        $dataProperty = Property::latest()->paginate(3);
+        return view('frontend.home.index', compact('property','dataProperty'));
     }
 
     public function create(Request $request)
