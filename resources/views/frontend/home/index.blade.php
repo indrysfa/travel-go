@@ -106,6 +106,43 @@
                     <a href="#promotion">Check Promotions</a>
                 </div>
             </div>
+        </section>
+        <!-- about -->
+        <div id="about" class="about">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 ">
+                        <div class="titlepage">
+                            <h2>About our travel agency</h2>
+                            <span> Setiap Apartemen by Travel-GO Property Management, baik furnished dan unfurnished
+                                melewati
+                                tahap standarisasi dan perbaikan berkala. Pastikan memilih apartemen by Travel-GO Property
+                                Management untuk Anda yang membutuhkan Apartemen dengan standarisasi terjamin.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                            <div class="about-box">
+                                <p> <span>Travel-Go Realty menghubungkan penyewa dengan pemilik dengan cara yang
+                                        revolusioner
+                                        dan servis profesional. Dengan fitur foto 360°, inspeksi langsung serta opsi
+                                        pembayaran
+                                        yang fleksibel, penyewaan tempat tinggal tidak pernah semudah ini.<br>Dan ada
+                                        promosinya
+                                        juga lho terbatas check sekarang juga !</span></p>
+                                <div class="palne-img-area">
+                                    <img src="{{ asset('assets/eforlad/images/plane-img.png') }}" alt="images">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#promotion">Check Promotions</a>
+                </div>
+            </div>
         </div>
         <!-- end about -->
         <!--packages start-->
@@ -126,97 +163,36 @@
                 </div>
                 <!--/.gallery-header-->
                 <div class="packages-content">
-                    <div class="row justify-content-end">
-                        <div class="travel-select-icon">
-                            <select class="form-control ">
-                                <option value="default">Jakarta</option><!-- /.option-->
-                                <option value="turkey">Bali</option><!-- /.option-->
-                                <option value="russia">Bandung</option><!-- /.option-->
-                                <option value="egept">Semarang</option><!-- /.option-->
-                            </select><!-- /.select-->
-                        </div><!-- /.travel-select-icon -->
-                    </div>
                     <div class="row loc-carousel">
+                        @foreach ($dataProperty as $p)
+                            <div class="col-md-4 col-sm-6">
+                                <div class="single-package-item">
+                                    <img src="{{ Storage::url('public/image/' . $p->gambar1) }}" alt="package-place">
+                                    <div class="single-package-item-txt">
+                                        <h3>{{ $p->kota }} <span
+                                                class="pull-right">{{ number_format($p->harga, 0, '', '.') }}</span></h3>
+                                        <div class="packages-para">
+                                            <h4>{{ $p->nama }} {{ $p->tipe_kamar }}
+                                                {{ $p->m_property->tipe_property }} at {{ $p->m_building->nm_building }}
+                                                By Travel-Go - {{ $p->kota }}
+                                            </h4>
+                                        </div>
+                                        <!--/.packages-para-->
 
-                        <div class="col-md-4 col-sm-6">
-                            <div class="single-package-item">
-                                <img src="{{ asset('assets/tournest/assets/images/packages/p1.jpg') }}"
-                                    alt="package-place">
-                                <div class="single-package-item-txt">
-                                    <h3>Jakarta <span class="pull-right">$499</span></h3>
-                                    <div class="packages-para">
-                                        <h4>Exclusive Studio Apartment at Woodland Park Residence By Travel-Go - Jakarta
-                                        </h4>
-                                    </div>
-                                    <!--/.packages-para-->
+                                        <button type="button" class="cart-btn"><span class="icon_bag_alt"></span>
+                                            Book</button>
 
-                                    <div class="about-btn">
-                                        <button class="about-view packages-btn">
-                                            book now
-                                        </button>
+                                        <!--/.about-btn-->
                                     </div>
-                                    <!--/.about-btn-->
+                                    <!--/.single-package-item-txt-->
                                 </div>
-                                <!--/.single-package-item-txt-->
-                            </div>
-                            <!--/.single-package-item-->
+                                <!--/.single-package-item-->
 
-                        </div>
+                            </div>
+                        @endforeach
                         <!--/.col-->
 
-                        <div class="col-md-4 col-sm-6">
-                            <div class="single-package-item">
-                                <img src="{{ asset('assets/tournest/assets/images/packages/p1.jpg') }}"
-                                    alt="package-place">
-                                <div class="single-package-item-txt">
-                                    <h3>Jakarta <span class="pull-right">$499</span></h3>
-                                    <div class="packages-para">
-                                        <h4>Exclusive Studio Apartment at Woodland Park Residence By Travel-Go - Jakarta
-                                        </h4>
 
-                                    </div>
-                                    <!--/.packages-para-->
-
-                                    <div class="about-btn">
-                                        <button class="about-view packages-btn">
-                                            book now
-                                        </button>
-                                    </div>
-                                    <!--/.about-btn-->
-                                </div>
-                                <!--/.single-package-item-txt-->
-                            </div>
-                            <!--/.single-package-item-->
-
-                        </div>
-                        <!--/.col-->
-
-                        <div class="col-md-4 col-sm-6">
-                            <div class="single-package-item">
-                                <img src="{{ asset('assets/tournest/assets/images/packages/p1.jpg') }}"
-                                    alt="package-place">
-                                <div class="single-package-item-txt">
-                                    <h3>Jakarta <span class="pull-right">$499</span></h3>
-                                    <div class="packages-para">
-                                        <h4>Exclusive Studio Apartment at Woodland Park Residence By Travel-Go - Jakarta
-                                        </h4>
-
-                                    </div>
-                                    <!--/.packages-para-->
-
-                                    <div class="about-btn">
-                                        <button class="about-view packages-btn">
-                                            book now
-                                        </button>
-                                    </div>
-                                    <!--/.about-btn-->
-                                </div>
-                                <!--/.single-package-item-txt-->
-                            </div>
-                            <!--/.single-package-item-->
-
-                        </div>
-                        <!--/.col-->
 
                     </div>
                     <!--/.row-->
