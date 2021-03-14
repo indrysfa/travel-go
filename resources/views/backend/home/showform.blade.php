@@ -16,12 +16,12 @@
                             </div>
                             <div class="col-sm-4">
                                 <label for="checkin">Checkin</label>
-                                <input type="date" class="form-control" id="checkin" name="checkin"
+                                <input type="time" class="form-control" id="checkin" name="checkin"
                                     value="{{ old('checkin') }}">
                             </div>
                             <div class="col-sm-4">
                                 <label for="checkout">Checkout</label>
-                                <input type="date" class="form-control" id="checkout" name="checkout"
+                                <input type="time" class="form-control" id="checkout" name="checkout"
                                     value="{{ old('checkout') }}">
                             </div>
                         </div>
@@ -136,7 +136,7 @@
                                     value="{{ old('biaya_kebersihan') }}" placeholder="Enter Your Cleaning Fee">
                             </div>
                             <div class="col-sm-4">
-                                <label for="tambah_orang">Tambahan Orang</label>
+                                <label for="tambah_orang">Biaya Tambah Orang</label>
                                 <input type="number" class="form-control" id="tambah_orang" name="tambah_orang"
                                     value="{{ old('tambah_orang') }}" placeholder="Enter Your People">
                             </div>

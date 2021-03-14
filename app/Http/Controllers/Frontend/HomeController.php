@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Frontend;
 
+use App\Booking;
 use App\building;
 use App\fasilitas;
 use App\Http\Controllers\Controller;
@@ -11,24 +12,30 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         return view('frontend.home.index');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $data = Booking::create([
+            'id_property'   => $request->id_property, // auto input ambil dari id properties tampil view nama hotel / apartemen ?
+            'nama'          => $request->nama, // auto login user
+            'email'         => $request->email, // auto email user login
+            'no_telp'       => $request->no_telp, // auto no telp user login
+            'no_ktp'        => $request->no_ktp, // auto no ktp user login
+            'checkin_date'  => $request->checkin_date,
+            'checkout_date' => $request->checkout_date,
+            'promotion'     => $request->promotion,
+            'tamu'          => $request->tamu,
+            'harga'         => $request->harga, // auto ambil harga dari & buat rumus harga - harga promo
+            'status'        => 0 // 0 = booked 1 = konfirmasi kehadiran
+        ]);
+
+        if ($data) {
+            return view('frontend.home.sewa');
+        }
     }
 
     /**

@@ -60,18 +60,23 @@
                             <div class="quantity">
                                 <span>Tamu:</span>
                                 <div class="pro-qty">
-                                    <input type="text" value="0" id="quantity">
+                                    <input type="text" value="0" id="tamu" name="tamu">
                                 </div>
                             </div>
                             <div class="promotion" id="kode_promotion" style="display: none;">
                                 <span>Promotion:</span>
                                 <div class="row">
-                                    <input type="text" value="">
+                                    <input type="text" value="" name="promotion">
                                 </div>
                             </div>
                             <br>
                             <div class="quantity">
-                                <a href="#" class="cart-btn"><span class="icon_bag_alt"></span> Book Now</a>
+                                {{-- <button type="button" class="cart-btn" data-toggle="modal" data-target="#book_now">
+                                    <span class="icon_bag_alt"></span> Book Now
+                                </button> --}}
+                                <button type="submit" class="cart-btn" data-toggle="modal">
+                                    <span class="icon_bag_alt"></span> Book Now
+                                </button>
                             </div>
 
                         </div>
@@ -85,44 +90,56 @@
                             <div class="container-fluid">
                                 <div class="row">
                                     <div class="col-lg-2 col-md-4 col-sm-4 p-0">
-                                        <div class="instagram__item set-bg" data-setbg="{{ Storage::url('public/image/' . $property->gambar2) }}">
+                                        <div class="instagram__item set-bg"
+                                            data-setbg="{{ Storage::url('public/image/' . $property->gambar2) }}">
                                             <div class="instagram__text">
-                                                <img src="{{ Storage::url('public/image/' . $property->gambar2) }}" alt="">
+                                                <img src="{{ Storage::url('public/image/' . $property->gambar2) }}"
+                                                    alt="">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-lg-2 col-md-4 col-sm-4 p-0">
-                                        <div class="instagram__item set-bg" data-setbg="{{ Storage::url('public/image/' . $property->gambar3) }}">
+                                        <div class="instagram__item set-bg"
+                                            data-setbg="{{ Storage::url('public/image/' . $property->gambar3) }}">
                                             <div class="instagram__text">
-                                                <img src="{{ Storage::url('public/image/' . $property->gambar3) }}" alt="">
+                                                <img src="{{ Storage::url('public/image/' . $property->gambar3) }}"
+                                                    alt="">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-lg-2 col-md-4 col-sm-4 p-0">
-                                        <div class="instagram__item set-bg" data-setbg="{{ Storage::url('public/image/' . $property->gambar4) }}">
+                                        <div class="instagram__item set-bg"
+                                            data-setbg="{{ Storage::url('public/image/' . $property->gambar4) }}">
                                             <div class="instagram__text">
-                                                <img src="{{ Storage::url('public/image/' . $property->gambar4) }}" alt="">
+                                                <img src="{{ Storage::url('public/image/' . $property->gambar4) }}"
+                                                    alt="">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-lg-2 col-md-4 col-sm-4 p-0">
-                                        <div class="instagram__item set-bg" data-setbg="{{ Storage::url('public/image/' . $property->gambar5) }}">
+                                        <div class="instagram__item set-bg"
+                                            data-setbg="{{ Storage::url('public/image/' . $property->gambar5) }}">
                                             <div class="instagram__text">
-                                                <img src="{{ Storage::url('public/image/' . $property->gambar5) }}" alt="">
+                                                <img src="{{ Storage::url('public/image/' . $property->gambar5) }}"
+                                                    alt="">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-lg-2 col-md-4 col-sm-4 p-0">
-                                        <div class="instagram__item set-bg" data-setbg="{{ Storage::url('public/image/' . $property->gambar6) }}">
+                                        <div class="instagram__item set-bg"
+                                            data-setbg="{{ Storage::url('public/image/' . $property->gambar6) }}">
                                             <div class="instagram__text">
-                                                <img src="{{ Storage::url('public/image/' . $property->gambar6) }}" alt="">
+                                                <img src="{{ Storage::url('public/image/' . $property->gambar6) }}"
+                                                    alt="">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-lg-2 col-md-4 col-sm-4 p-0">
-                                        <div class="instagram__item set-bg" data-setbg="{{ Storage::url('public/image/' . $property->gambar7) }}">
+                                        <div class="instagram__item set-bg"
+                                            data-setbg="{{ Storage::url('public/image/' . $property->gambar7) }}">
                                             <div class="instagram__text">
-                                                <img src="{{ Storage::url('public/image/' . $property->gambar7) }}" alt="">
+                                                <img src="{{ Storage::url('public/image/' . $property->gambar7) }}"
+                                                    alt="">
                                             </div>
                                         </div>
                                     </div>
@@ -150,15 +167,15 @@
                                     Lantai
                                     {{ $property->lantai }}
                                     Check-in
-                                    14.00 - 24.00
+                                    {{ date('h:i A', strtotime($property->checkin)) }} -
                                     Check-out
-                                    12.00
+                                    {{ date('h:i A', strtotime($property->checkout)) }}
                                     Biaya Kebersihan
                                     Unit dan linen hanya akan dibersihkan saat check-out. Permintaan khusus selama masa
                                     tinggal Anda tersedia dengan biaya tambahan.
                                     Orang Tambahan
                                     Tambahan orang di luar hunian maksimal akan dikenakan biaya
-                                    5{{ $property->tambah_orang }} / orang. Harap
+                                    {{ number_format($property->tambah_orang, 0, '', '.') }} / orang. Harap
                                     dicatat bahwa tempat tidur tambahan tidak akan tersedia dalam skenario ini.
                                     Lainnya
                                     Biaya parkir merupakan tanggung jawab tamu, prediksi biaya mulai dari 5.000 / jam.</p>
@@ -207,25 +224,25 @@
                                 <div class="row">
                                     <div class="col-sm-3">
                                         <span>Check-in: </span>
-                                        <p>13.00</p>
+                                        <p>{{ date('h:i A', strtotime($property->checkin)) }}</p>
                                     </div>
                                     <div class="col-sm-3">
                                         <span>Check-out: </span>
-                                        <p>12.00</p>
+                                        <p>{{ date('h:i A', strtotime($property->checkout)) }}</p>
                                     </div>
                                     <div class="col-sm-3">
                                         <span>Biaya Kebersihan: </span>
-                                        <p>{{ number_format($property->biaya_kebersihan, 0, '', '.') }}</p>
+                                        <p>Rp. {{ number_format($property->biaya_kebersihan, 0, '', '.') }},-</p>
                                     </div>
                                     <div class="col-sm-3">
                                         <span>Orang Tambahan: </span>
                                         <p>Tambahan orang di luar hunian maksimal akan dikenakan biaya
-                                            {{ $property->tambah_orang }} / orang. Harap
+                                            Rp. {{ number_format($property->tambah_orang, 0, '', '.') }},- / orang. Harap
                                             dicatat bahwa tempat tidur tambahan tidak akan tersedia dalam skenario ini.</p>
                                     </div>
                                     <div class="col-sm-3">
                                         <span>Lainnya: </span>
-                                        <p>Biaya parkir merupakan tanggung jawab tamu, prediksi biaya mulai dari 5.000 /
+                                        <p>Biaya parkir merupakan tanggung jawab tamu, prediksi biaya mulai dari Rp. 5.000,- /
                                             jam.</p>
                                     </div>
                                 </div>
@@ -233,8 +250,7 @@
                                 <div class="row">
                                     <div class="col-sm-3">
                                         <span>Fasilitas Gedung: </span>
-
-                                        {{ $property->m_fasilitas->nm_fasilitas }}
+                                        <p>- {{ $property->m_fasilitas->nm_fasilitas }}</p>
                                     </div>
                                 </div>
                                 <hr>
@@ -251,7 +267,6 @@
                     </div>
                 </div>
                 <div class="row loc-carousel">
-
                     @foreach ($dataProperty as $p)
                         <div class="col-md-4 col-sm-6">
                             <div class="single-package-item">
@@ -265,14 +280,11 @@
                                             {{ $p->m_building->nm_building }} By
                                             Travel-Go - Jakarta
                                         </h4>
-
                                     </div>
                                     <!--/.packages-para-->
 
                                     <div class="about-btn">
-                                        <button class="about-view packages-btn">
-                                            book now
-                                        </button>
+                                        <a href="" class="cart-btn"><span class="icon_bag_alt"></span> Book</a>
                                     </div>
                                     <!--/.about-btn-->
                                 </div>
@@ -283,20 +295,111 @@
                         </div>
                     @endforeach
                     <!--/.col-->
-
-
-
                 </div>
                 <!--/.row-->
             </div>
         </div>
     </section>
     <!-- Product Details Section End -->
+
+    <!-- Modal Booking cancel-->
+    {{-- <div class="modal fade" id="book_now" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Form Booking</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="#" method="post">
+                        @csrf
+                        <div class="form-group row">
+                            <label for="nama" class="col-sm-4 col-form-label">Nama Tempat</label>
+                            <div class="col-sm-8">
+                                <input type="text" readonly class="form-control-plaintext" id="nama"
+                                    value="{{ old('nama', $property->nama) }}">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="email" class="col-sm-4 col-form-label">Email</label>
+                            <div class="col-sm-8">
+                                <input type="text" readonly class="form-control-plaintext" id="email"
+                                    value="{{ old('email', $property->email) }}">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="no_telp" class="col-sm-4 col-form-label">No Telepon</label>
+                            <div class="col-sm-8">
+                                <input type="text" readonly class="form-control-plaintext" id="no_telp"
+                                    value="{{ old('no_telp', $property->no_telp) }}">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="no_ktp" class="col-sm-4 col-form-label">No KTP</label>
+                            <div class="col-sm-8">
+                                <input type="text" readonly class="form-control-plaintext" id="no_ktp"
+                                    value="{{ old('no_ktp', $property->no_ktp) }}">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="checkin_date" class="col-sm-4 col-form-label">Checkin</label>
+                            <div class="col-sm-8">
+                                <input type="text" readonly class="form-control-plaintext" id="checkin_date"
+                                    value="{{ old('checkin_date', $property->checkin_date) }}">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="checkout_date" class="col-sm-4 col-form-label">Checkout</label>
+                            <div class="col-sm-8">
+                                <input type="text" readonly class="form-control-plaintext" id="checkout_date"
+                                    value="{{ old('checkout_date', $property->checkout_date) }}">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="properti" class="col-sm-4 col-form-label">Property</label>
+                            <div class="col-sm-8">
+                                <input type="text" readonly class="form-control-plaintext" id="properti"
+                                    value="{{ old('properti', $property->properti) }}">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="promotion" class="col-sm-4 col-form-label">Promotion</label>
+                            <div class="col-sm-8">
+                                <input type="text" readonly class="form-control-plaintext" id="promotion"
+                                    value="{{ old('promotion', $property->promotion) }}">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="tamu" class="col-sm-4 col-form-label">Tamu</label>
+                            <div class="col-sm-8">
+                                <input type="text" readonly class="form-control-plaintext" id="tamu"
+                                    value="{{ old('tamu', $property->tamu) }}">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="harga" class="col-sm-4 col-form-label">Harga</label>
+                            <div class="col-sm-8">
+                                <input type="text" readonly class="form-control-plaintext" id="harga"
+                                    value="{{ old('harga', number_format($property->harga, 0, '', '.')) }}">
+                            </div>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="submit" class="cart-btn btn-danger"><span class="icon_bag_alt"></span> Process</button>
+                        </div>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div> --}}
+
 @endsection
 
 @section('js')
     <script>
-        var qty = document.getElementById('quantity');
+        var qty = document.getElementById('tamu');
         var promo = document.getElementById('kode_promotion');
 
         qty.addEventListener('keypress', function() {
