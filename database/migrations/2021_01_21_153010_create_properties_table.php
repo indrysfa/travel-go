@@ -20,8 +20,8 @@ class CreatePropertiesTable extends Migration
             $table->char('alamat');
             $table->string('kota');
             $table->integer('harga');
-            $table->date('checkin');
-            $table->date('checkout');
+            $table->time('checkin');
+            $table->time('checkout');
             $table->string('ukuran');
             $table->string('kamar_mandi');
             $table->string('tipe_kamar');

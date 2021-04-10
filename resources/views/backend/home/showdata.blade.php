@@ -91,7 +91,7 @@
                 </div>
                 <!-- /.col-md-6 -->
 
-                <!-- Modal -->
+                <!-- Modal Add Tipe Property-->
                 <div class="modal fade" id="add_tipeproperty" tabindex="-1" aria-labelledby="exampleModalLabel"
                     aria-hidden="true">
                     <div class="modal-dialog">
