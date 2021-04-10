@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Backend\HomeController;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
@@ -31,20 +29,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    // protected $redirectTo = RouteServiceProvider::HOME;
-    protected $redirectTo = '/';
-    // public function redirectTo(){
-    //     $role = Auth::user()->role;
-
-    //     switch($role){
-    //         case 'admin':
-    //             return '/admin';
-    //         break;
-    //         case 'user':
-    //             return '/home';
-    //         break;
-    //     }
-    // }
+    protected $redirectTo = RouteServiceProvider::HOME;
 
     /**
      * Create a new controller instance.
@@ -67,9 +52,9 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'no_telp' => ['required', 'numeric'],
-            'no_ktp' => ['required', 'numeric'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'no_telp' => ['required', 'string', 'max:255'],
+            'no_ktp' => ['required', 'string', 'max:255'],
+            'password' => ['required', 'string', 'min:4', 'confirmed'],
         ]);
     }
 
@@ -87,7 +72,6 @@ class RegisterController extends Controller
             'no_telp' => $data['no_telp'],
             'no_ktp' => $data['no_ktp'],
             'password' => Hash::make($data['password']),
-
         ]);
     }
 }
