@@ -92,9 +92,6 @@ Route::group(['prefix' => '/admin', 'namespace' => 'Backend'], function () {
 
 
     // Ika
-<<<<<<< HEAD
-    //     Route::get('/promotion', 'PromotionController@index')->name('backend.promotion.index');
-=======
     Route::get('/data','backend/PromotionController@data')->name('backend.promotion.data');
 
     Route::get('/datapromotion','backend/PromotionController@datapromotion')->name('showpromotionn');
@@ -115,7 +112,6 @@ Route::group(['prefix' => '/admin', 'namespace' => 'Backend'], function () {
     
 
  
->>>>>>> origin/ikafrontend
 });
 
 // Auth
