@@ -7,5 +7,13 @@ use Illuminate\Http\Request;
 
 class PromotionController extends Controller
 {
-    //
+    public function promotion()
+    {
+        return view('frontend.promotion.index');
+    }
+
+    // public function booking()
+    // {
+    //     return view('frontend.promotion.detail');
+    // }
 }
