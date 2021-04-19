@@ -15,11 +15,12 @@ Laravel is a web application framework with expressive, elegant syntax. We belie
 PAGE ::
 - Home : INDRY
 - Promotions : IKA
-- SEWA : INDRY
+- SEWA : Hendy
 
 # travel-go
 
 - [INDRY](https://github.com/indrysfa)
 - [IKA](https://github.com/Mahananiika)
+- [HENDY](https://github.com/hendhendy)
 
 Support author https://saweria.co/donate/sailingxlt
