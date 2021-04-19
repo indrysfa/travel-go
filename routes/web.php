@@ -13,9 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/regis', function () {
+    return view('auth.register');
+});
 
 // ika
 // page promotion
@@ -94,9 +94,9 @@ Route::group(['prefix' => '/admin', 'namespace' => 'Backend'], function () {
 });
 
 // Auth
-Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
-Route::post('login', 'Auth\LoginController@login')->name('store.login');
-Route::post('logout', 'Auth\LoginController@logout')->name('logout');
+Route::get('/login', 'Auth\LoginController@showLoginForm')->name('login');
+Route::post('/login', 'Auth\LoginController@login')->name('store.login');
+Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
 // Registration Routes...
-Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
-Route::post('register', 'Auth\RegisterController@register')->name('store.register');
+Route::get('/register', 'Auth\RegisterController@showRegistrationForm')->name('register');
+Route::post('/register', 'Auth\RegisterController@register')->name('store.register');

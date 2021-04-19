@@ -35,18 +35,7 @@ class HomeController extends Controller
         return view('frontend.sewa.caridata', compact('frontendSewaDataProperty', 'frontendKategoriFasilitas', 'frontendKategoriBuilding'));
     }
 
-<<<<<<< HEAD
-
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-=======
     public function create(Request $request)
->>>>>>> 8a12f4f678088e0fc14710a83c854d0be7d5b401
     {
         $data = Booking::create([
             'id_property'   => $request->id_property, // auto input ambil dari id properties tampil view nama hotel / apartemen ?
