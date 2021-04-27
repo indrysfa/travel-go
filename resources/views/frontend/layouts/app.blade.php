@@ -82,7 +82,7 @@
                                     </li>
                                     <li><img src="{{ asset('assets/eforlad/images/3.png') }}" alt="header-contact" />
                                         admin@travel-go.com</li>
-                                    <li> <button><a href="#">Login</a></button> </li>
+                                    {{-- <li> <button><a href="/login">Login</a></button> </li> --}}
                                     <li> <a href="{{ route('form.regis') }}">Register</a> </li>
                                 </ul>
                             </div>
@@ -109,7 +109,7 @@
                                         <li class=""> <a href="{{ route('home.index') }}">Home</a> </li>
                                         <li class=""> <a
                                                 href="{{ route('frontend.sewa.index') }}#sewa-search">Sewa</a> </li>
-                                        <li><a href="#travel">Promotion</a></li>
+                                        <li><a href="{{route('frontend.promotion.index')}}">Promotion</a></li>
                                     </ul>
                                 </nav>
                                 <span class="target"></span>

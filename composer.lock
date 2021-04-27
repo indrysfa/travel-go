@@ -2371,11 +2371,14 @@
                 "terminal"
             ],
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
             "support": {
                 "source": "https://github.com/symfony/console/tree/v5.2.3"
             },
 >>>>>>> origin/ikafrontend
+=======
+>>>>>>> 2dabb055826f3c2891b588b16aaf93b856309086
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -2447,11 +2450,14 @@
             "description": "Converts CSS selectors to XPath expressions",
             "homepage": "https://symfony.com",
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
             "support": {
                 "source": "https://github.com/symfony/css-selector/tree/v5.2.3"
             },
 >>>>>>> origin/ikafrontend
+=======
+>>>>>>> 2dabb055826f3c2891b588b16aaf93b856309086
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -2596,11 +2602,14 @@
             "description": "Provides tools to manage errors and ease debugging PHP code",
             "homepage": "https://symfony.com",
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
             "support": {
                 "source": "https://github.com/symfony/error-handler/tree/v5.2.3"
             },
 >>>>>>> origin/ikafrontend
+=======
+>>>>>>> 2dabb055826f3c2891b588b16aaf93b856309086
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -2692,11 +2701,14 @@
             "description": "Provides tools that allow your application components to communicate with each other by dispatching events and listening to them",
             "homepage": "https://symfony.com",
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
             "support": {
                 "source": "https://github.com/symfony/event-dispatcher/tree/v5.2.3"
             },
 >>>>>>> origin/ikafrontend
+=======
+>>>>>>> 2dabb055826f3c2891b588b16aaf93b856309086
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -2845,11 +2857,14 @@
             "description": "Finds files and directories via an intuitive fluent interface",
             "homepage": "https://symfony.com",
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
             "support": {
                 "source": "https://github.com/symfony/finder/tree/v5.2.3"
             },
 >>>>>>> origin/ikafrontend
+=======
+>>>>>>> 2dabb055826f3c2891b588b16aaf93b856309086
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -3014,11 +3029,14 @@
             "description": "Defines an object-oriented layer for the HTTP specification",
             "homepage": "https://symfony.com",
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
             "support": {
                 "source": "https://github.com/symfony/http-foundation/tree/v5.2.3"
             },
 >>>>>>> origin/ikafrontend
+=======
+>>>>>>> 2dabb055826f3c2891b588b16aaf93b856309086
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -3146,11 +3164,14 @@
             "description": "Provides a structured process for converting a Request into a Response",
             "homepage": "https://symfony.com",
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
             "support": {
                 "source": "https://github.com/symfony/http-kernel/tree/v5.2.3"
             },
 >>>>>>> origin/ikafrontend
+=======
+>>>>>>> 2dabb055826f3c2891b588b16aaf93b856309086
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -3249,11 +3270,14 @@
                 "mime-type"
             ],
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
             "support": {
                 "source": "https://github.com/symfony/mime/tree/v5.2.3"
             },
 >>>>>>> origin/ikafrontend
+=======
+>>>>>>> 2dabb055826f3c2891b588b16aaf93b856309086
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -4024,11 +4048,14 @@
             "description": "Executes commands in sub-processes",
             "homepage": "https://symfony.com",
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
             "support": {
                 "source": "https://github.com/symfony/process/tree/v5.2.3"
             },
 >>>>>>> origin/ikafrontend
+=======
+>>>>>>> 2dabb055826f3c2891b588b16aaf93b856309086
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -4121,11 +4148,14 @@
                 "url"
             ],
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
             "support": {
                 "source": "https://github.com/symfony/routing/tree/v5.2.3"
             },
 >>>>>>> origin/ikafrontend
+=======
+>>>>>>> 2dabb055826f3c2891b588b16aaf93b856309086
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -4287,11 +4317,14 @@
                 "utf8"
             ],
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
             "support": {
                 "source": "https://github.com/symfony/string/tree/v5.2.3"
             },
 >>>>>>> origin/ikafrontend
+=======
+>>>>>>> 2dabb055826f3c2891b588b16aaf93b856309086
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -4387,11 +4420,14 @@
             "description": "Provides tools to internationalize your application",
             "homepage": "https://symfony.com",
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
             "support": {
                 "source": "https://github.com/symfony/translation/tree/v5.2.3"
             },
 >>>>>>> origin/ikafrontend
+=======
+>>>>>>> 2dabb055826f3c2891b588b16aaf93b856309086
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -4557,11 +4593,14 @@
                 "dump"
             ],
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
             "support": {
                 "source": "https://github.com/symfony/var-dumper/tree/v5.2.3"
             },
 >>>>>>> origin/ikafrontend
+=======
+>>>>>>> 2dabb055826f3c2891b588b16aaf93b856309086
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -4982,6 +5021,7 @@
                 "page"
             ],
 <<<<<<< HEAD
+<<<<<<< HEAD
             "time": "2021-03-24T18:58:31+00:00"
 =======
             "support": {
@@ -4992,6 +5032,9 @@
             },
             "time": "2021-02-05T12:52:11+00:00"
 >>>>>>> origin/ikafrontend
+=======
+            "time": "2021-02-16T12:46:19+00:00"
+>>>>>>> 2dabb055826f3c2891b588b16aaf93b856309086
         },
         {
             "name": "facade/ignition-contracts",
@@ -6121,12 +6164,15 @@
                 "xunit"
             ],
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
                 "source": "https://github.com/sebastianbergmann/phpunit/tree/9.5.2"
             },
 >>>>>>> origin/ikafrontend
+=======
+>>>>>>> 2dabb055826f3c2891b588b16aaf93b856309086
             "funding": [
                 {
                     "url": "https://phpunit.de/donate.html",

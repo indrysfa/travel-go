@@ -32,6 +32,8 @@ Route::group(['prefix' => '/', 'namespace' => 'Frontend', 'middleware' => 'auth'
     Route::get('/sewa-detail/{property}', 'HomeController@show')->name('sewa.index');
     Route::get('/registration', 'HomeController@registration')->name('form.regis');
     Route::post('/add-booking', 'HomeController@create')->name('badd.booking');
+    
+    Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 
     //Hendy
     Route::get('/sewa', 'SewaController@indexFrontendSewaDataProperty')->name('frontend.sewa.index');
@@ -45,7 +47,7 @@ Route::group(['prefix' => '/', 'namespace' => 'Frontend', 'middleware' => 'auth'
 
 
 // Route Backend
-Route::group(['prefix' => '/admin', 'namespace' => 'Backend'], function () {
+Route::group(['prefix' => '/admin', 'namespace' => 'Backend', 'middleware' => 'auth'], function () {
     // Indry
     Route::get('/', 'HomeController@index')->name('bhome.index');
     Route::get('/home', 'HomeController@show')->name('bhome.show');
@@ -62,6 +64,9 @@ Route::group(['prefix' => '/admin', 'namespace' => 'Backend'], function () {
     Route::get('/tipe-property', 'HomeController@showTipe')->name('bform.tipe');
     Route::post('/add-tipe', 'HomeController@addTipeProperty')->name('badd.tipe');
 
+    Route::get('login', 'Auth\AdminAuthController@getLogin')->name('admin.login');
+    Route::post('login', 'Auth\AdminAuthController@postLogin');
+    
     // Hendy
     Route::get('/sewa', 'SewaController@index')->name('backend.sewa.index');
 
@@ -92,6 +97,10 @@ Route::group(['prefix' => '/admin', 'namespace' => 'Backend'], function () {
 
 
     // Ika
+<<<<<<< HEAD
+=======
+        // Route::get('/promotion', 'PromotionController@index')->name('backend.promotion.index');
+>>>>>>> 2dabb055826f3c2891b588b16aaf93b856309086
     Route::get('/data','backend/PromotionController@data')->name('backend.promotion.data');
 
     Route::get('/datapromotion','backend/PromotionController@datapromotion')->name('showpromotionn');

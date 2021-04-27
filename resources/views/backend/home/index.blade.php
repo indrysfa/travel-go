@@ -16,6 +16,7 @@
 
                             <p class="card-text">With supporting text below as a natural lead-in to additional
                                 content.</p>
+                                <p>Klik kanan atas untuk informasi lebih lanjut !</p>
                             <a href="{{ route('home.index') }}" class="btn btn-primary">Go to Frontend</a>
                         </div>
                     </div>

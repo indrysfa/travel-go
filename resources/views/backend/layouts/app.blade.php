@@ -48,18 +48,21 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
             <!-- Right navbar links -->
             <ul class="navbar-nav ml-auto">
+                
                 <li class="nav-item dropdown">
-                    <a class="nav-link" data-toggle="dropdown" href="#">
-                        <i class="far fa-user"></i>
-                        <span class="badge badge-warning navbar-badge"></span>
+                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        {{ Auth::user()->name }}
                     </a>
-                    <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                        <span class="dropdown-header">Admin</span>
-                        <div class="dropdown-divider"></div>
-                        <a href="#" class="dropdown-item">
-                            <i class="fas fa-users mr-2"></i> Logout
-                            <div class="dropdown-divider"></div>
-                            <a href="#" class="dropdown-item dropdown-footer">Thank You</a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                         document.getElementById('logout-form').submit();">
+                            {{ __('Logout') }}
+                        </a>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
                     </div>
                 </li>
                 <li class="nav-item">
@@ -88,7 +91,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="#" class="d-block">Alexander Pierce</a>
+                        <a href="/admin" class="d-block">{{ Auth::user()->name }}</a>
                     </div>
                 </div>
 
@@ -156,7 +159,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">
+                                    <a href="{{ route('backend.promotion.data') }}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Data</p>
                                     </a>
@@ -201,7 +204,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <!-- Control sidebar content goes here -->
             <div class="p-3">
                 <h5>Travel-GO</h5>
-                <p>Yuk Sewa</p>
+                <a href="{{ route('home.index') }}" style="color: yellow">Yuk Sewa Klik disini</a>
+                <h3>Pemberitahuan!</h3>
+                <p>Aplikasi ini hanya 1 user login admin & user belum multiuser</p>
+                <p>Terima kasih ^-^</p>
             </div>
         </aside>
         <!-- /.control-sidebar -->
