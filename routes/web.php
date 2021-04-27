@@ -40,9 +40,13 @@ Route::group(['prefix' => '/', 'namespace' => 'Frontend', 'middleware' => 'auth'
     Route::get('/cari-property', 'HomeController@frontendSearch')->name('search');
 
     // Ika
+<<<<<<< HEAD
     Route::get('/promotion', 'PromotionController@promotion')->name('frontend.promotion.index');
 
     // Route::get('/booking', 'PromotionController@promotion')->name('frontend.promotion.detail');
+=======
+    Route::get('/promotion', 'promotionController@promotion')->name('promotion');
+>>>>>>> 776b4abca99408173f31a703d8b41970e6a9ef44
 });
 
 
