@@ -24,8 +24,6 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="product__details__pic">
-
-
                         <div class="product__details__pic__slider">
                             <img class="img-fluid" src="{{ Storage::url('public/image/' . $property->gambar1) }}" alt="">
                         </div>
@@ -33,55 +31,66 @@
                     </div>
                 </div>
 
-                <div class="col-lg-6">
-                    <div class="product__details__text">
-                        <h3>{{ $property->nama }}</span></h3>
-                        <div class="product__details__price">{{ 'Rp. ' . number_format($property->harga, 0, '', '.') }}
-                        </div>
-                        <p>{{ $property->alamat }}</p>
-                        <div class="product__details__button">
-                            <div class="date">
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        <span>Checkin:</span>
-                                        <div class="pro-date">
-                                            <input class="form-control w-55 h-30" type="date" name="checkin">
+                <form action="{{ route('badd.booking') }}" enctype="multipart/form-data" method="POST">
+                    @csrf
+                    <input type="hidden" name="nama" value="{{Auth::user()->name}}">
+                    <input type="hidden" name="email" value="{{Auth::user()->email}}">
+                    <input type="hidden" name="no_telp" value="{{Auth::user()->no_telp}}">
+                    <input type="hidden" name="no_ktp" value="{{Auth::user()->no_ktp}}">
+                    <input type="hidden" name="harga" value="1600000">
+                    <input type="hidden" name="status" value="0">
+                    <input type="hidden" name="id_property" value="1">
+                    <div class="col-lg-6">
+                        <div class="product__details__text">
+                            <h3>{{ $property->nama }}</span></h3>
+                            <div class="product__details__price">
+                                {{ 'Rp. ' . number_format($property->harga, 0, '', '.') }}
+                            </div>
+                            <p>{{ $property->alamat }}</p>
+                            <div class="product__details__button">
+                                <div class="date">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <span>Checkin:</span>
+                                            <div class="pro-date">
+                                                <input class="form-control w-55 h-30" type="date" name="checkin_date">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <span>Checkout:</span>
+                                            <div class="pro-date">
+                                                <input class="form-control w-55 h-30" type="date" name="checkout_date">
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="col-sm-6">
-                                        <span>Checkout:</span>
-                                        <div class="pro-date">
-                                            <input class="form-control w-55 h-30" type="date" name="checkout">
-                                        </div>
+                                    <br>
+                                </div>
+                                <div class="quantity">
+                                    <span>Tamu:</span>
+                                    <div class="pro-qty">
+                                        <input type="text" value="0" id="tamu" name="tamu">
+                                    </div>
+                                </div>
+                                <div class="promotion" id="kode_promotion" style="display: none;">
+                                    <span>Promotion:</span>
+                                    <div class="row">
+                                        <input type="text" value="" name="promotion">
                                     </div>
                                 </div>
                                 <br>
-                            </div>
-                            <div class="quantity">
-                                <span>Tamu:</span>
-                                <div class="pro-qty">
-                                    <input type="text" value="0" id="tamu" name="tamu">
+                                <div class="quantity">
+                                    {{-- <button type="button" class="cart-btn" data-toggle="modal" data-target="#book_now">
+                                        <span class="icon_bag_alt"></span> Book Now
+                                    </button> --}}
+                                    <button type="submit" class="cart-btn" data-toggle="modal">
+                                        <span class="icon_bag_alt"></span> Book Now
+                                    </button>
                                 </div>
-                            </div>
-                            <div class="promotion" id="kode_promotion" style="display: none;">
-                                <span>Promotion:</span>
-                                <div class="row">
-                                    <input type="text" value="" name="promotion">
-                                </div>
-                            </div>
-                            <br>
-                            <div class="quantity">
-                                {{-- <button type="button" class="cart-btn" data-toggle="modal" data-target="#book_now">
-                                    <span class="icon_bag_alt"></span> Book Now
-                                </button> --}}
-                                <button type="submit" class="cart-btn" data-toggle="modal">
-                                    <span class="icon_bag_alt"></span> Book Now
-                                </button>
-                            </div>
 
+                            </div>
                         </div>
                     </div>
-                </div>
+                </form>
 
                 <div class="col-lg-12">
                     <div class="product__details__tab">
@@ -242,7 +251,8 @@
                                     </div>
                                     <div class="col-sm-3">
                                         <span>Lainnya: </span>
-                                        <p>Biaya parkir merupakan tanggung jawab tamu, prediksi biaya mulai dari Rp. 5.000,- /
+                                        <p>Biaya parkir merupakan tanggung jawab tamu, prediksi biaya mulai dari Rp. 5.000,-
+                                            /
                                             jam.</p>
                                     </div>
                                 </div>

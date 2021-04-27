@@ -50,7 +50,7 @@ class HomeController extends Controller
         ]);
 
         if ($data) {
-            return view('frontend.home.sewa');
+            return redirect()->route('frontend.sewa.index');
         }
     }
 

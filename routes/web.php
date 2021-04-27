@@ -26,11 +26,14 @@ use Illuminate\Support\Facades\Route;
 // sewa
 
 // Route Frontend
-Route::group(['prefix' => '/', 'namespace' => 'Frontend'], function () {
+Route::group(['prefix' => '/', 'namespace' => 'Frontend', 'middleware' => 'auth'], function () {
     // Indry
     Route::get('/', 'HomeController@index')->name('home.index');
     Route::get('/sewa-detail/{property}', 'HomeController@show')->name('sewa.index');
     Route::get('/registration', 'HomeController@registration')->name('form.regis');
+    Route::post('/add-booking', 'HomeController@create')->name('badd.booking');
+    
+    Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 
     //Hendy
     Route::get('/sewa', 'SewaController@indexFrontendSewaDataProperty')->name('frontend.sewa.index');
@@ -42,7 +45,7 @@ Route::group(['prefix' => '/', 'namespace' => 'Frontend'], function () {
 
 
 // Route Backend
-Route::group(['prefix' => '/admin', 'namespace' => 'Backend'], function () {
+Route::group(['prefix' => '/admin', 'namespace' => 'Backend', 'middleware' => 'auth:admin'], function () {
     // Indry
     Route::get('/', 'HomeController@index')->name('bhome.index');
     Route::get('/home', 'HomeController@show')->name('bhome.show');
@@ -59,6 +62,9 @@ Route::group(['prefix' => '/admin', 'namespace' => 'Backend'], function () {
     Route::get('/tipe-property', 'HomeController@showTipe')->name('bform.tipe');
     Route::post('/add-tipe', 'HomeController@addTipeProperty')->name('badd.tipe');
 
+    Route::get('login', 'Auth\AdminAuthController@getLogin')->name('admin.login');
+    Route::post('login', 'Auth\AdminAuthController@postLogin');
+    
     // Hendy
     Route::get('/sewa', 'SewaController@index')->name('backend.sewa.index');
 
@@ -87,11 +93,15 @@ Route::group(['prefix' => '/admin', 'namespace' => 'Backend'], function () {
     Route::put('/kategori-building/{backendKategoriBuilding}', 'SewaController@updateKategoriBuilding')->name('backend.kategori-building.update');
     Route::delete('/kategori-building/{backendKategoriBuilding}', 'SewaController@destroyKategoriBuilding')->name('backend.kategori-building.destroy');
 
-    
+
     // Ika
-//     Route::get('/promotion', 'PromotionController@index')->name('backend.promotion.index');
+    //     Route::get('/promotion', 'PromotionController@index')->name('backend.promotion.index');
 });
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
+// Auth
+Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
+Route::post('login', 'Auth\LoginController@login')->name('store.login');
+Route::post('logout', 'Auth\LoginController@logout')->name('logout');
+// Registration Routes...
+Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
+Route::post('register', 'Auth\RegisterController@register')->name('store.register');

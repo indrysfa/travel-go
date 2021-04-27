@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="{{ route('store.register') }}">
                         @csrf
 
                         <div class="form-group row">
@@ -40,7 +40,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="no_telp" class="col-md-4 col-form-label text-md-right">{{ __('no_telp') }}</label>
+                            <label for="no_telp" class="col-md-4 col-form-label text-md-right">{{ __('No Telpon') }}</label>
 
                             <div class="col-md-6">
                                 <input id="no_telp" type="number" class="form-control @error('no_telp') is-invalid @enderror" name="no_telp" value="{{ old('no_telp') }}" required autocomplete="no_telp" autofocus>
@@ -54,7 +54,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="no_ktp" class="col-md-4 col-form-label text-md-right">{{ __('no_ktp') }}</label>
+                            <label for="no_ktp" class="col-md-4 col-form-label text-md-right">{{ __('No KTP') }}</label>
 
                             <div class="col-md-6">
                                 <input id="no_ktp" type="text" class="form-control @error('no_ktp') is-invalid @enderror" name="no_ktp" value="{{ old('no_ktp') }}" required autocomplete="no_ktp" autofocus>
