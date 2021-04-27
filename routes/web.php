@@ -47,7 +47,7 @@ Route::group(['prefix' => '/', 'namespace' => 'Frontend', 'middleware' => 'auth'
 
 
 // Route Backend
-Route::group(['prefix' => '/admin', 'namespace' => 'Backend', 'middleware' => 'auth:admin'], function () {
+Route::group(['prefix' => '/admin', 'namespace' => 'Backend', 'middleware' => 'auth'], function () {
     // Indry
     Route::get('/', 'HomeController@index')->name('bhome.index');
     Route::get('/home', 'HomeController@show')->name('bhome.show');
@@ -97,7 +97,7 @@ Route::group(['prefix' => '/admin', 'namespace' => 'Backend', 'middleware' => 'a
 
 
     // Ika
-    //     Route::get('/promotion', 'PromotionController@index')->name('backend.promotion.index');
+        // Route::get('/promotion', 'PromotionController@index')->name('backend.promotion.index');
     Route::get('/data','backend/PromotionController@data')->name('backend.promotion.data');
 
     Route::get('/datapromotion','backend/PromotionController@datapromotion')->name('showpromotionn');
